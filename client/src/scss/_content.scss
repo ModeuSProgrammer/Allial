@@ -13,6 +13,10 @@
   &-three {
     background-color: $color-block-pink-1;
   }
+  &-single {
+    background-color: $color-block-pink-1;
+    margin: 64px 0;
+  }
 }
 
 .box {
@@ -56,5 +60,15 @@
   }
   &-content-pink-two {
     background-color: $color-block-pink-1;
+  }
+}
+
+.block-logo {
+  width: 150px;
+  margin: 10px;
+  .logo {
+    margin: 25px;
+    width: 90%;
+    height: 90%;
   }
 }

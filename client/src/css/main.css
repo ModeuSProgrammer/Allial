@@ -1,4 +1,7 @@
 * {
+  @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
+  font-family: "roboto slab";
+  font-weight: 400;
   padding: 0;
   margin: 0;
 }
@@ -19,12 +22,60 @@ header {
 }
 
 footer {
-  margin-top: 20px;
+  margin-top: 15px;
   background-color: #e3dcb8;
   width: 100%;
   height: 200px;
   display: flex;
   align-items: end;
+}
+footer .container {
+  width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 64px;
+}
+
+h2 {
+  font-size: 50px;
+}
+
+h3 {
+  font-size: 44px;
+}
+
+h4 {
+  font-size: 36px;
+}
+
+h5 {
+  font-size: 30px;
+}
+
+h6 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 20px;
 }
 
 .section {
@@ -42,6 +93,10 @@ footer {
 }
 .section-three {
   background-color: #e0b1cb;
+}
+.section-single {
+  background-color: #e0b1cb;
+  margin: 64px 0;
 }
 
 .box {
@@ -88,4 +143,47 @@ footer {
 }
 .block-content-pink-two {
   background-color: #e0b1cb;
+}
+
+.block-logo {
+  width: 150px;
+  margin: 10px;
+}
+.block-logo .logo {
+  margin: 25px;
+  width: 90%;
+  height: 90%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+form h2 {
+  margin-bottom: 40px;
+}
+form input {
+  display: flex;
+  margin-bottom: 20px;
+  width: 480px;
+  border: 4px solid #e3dcb8;
+  height: 40px;
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+button {
+  font-size: 30px;
+  font-weight: 600;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10px 70px;
+  background-color: transparent;
+  color: #231942;
+  cursor: pointer;
+  border: 6px solid #231942;
 }/*# sourceMappingURL=main.css.map */
