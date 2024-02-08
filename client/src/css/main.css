@@ -15,6 +15,7 @@
 header {
   display: flex;
   background-color: #231942;
+  justify-content: center;
   align-items: start;
   height: 70px;
   width: 100%;
@@ -45,7 +46,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+a {
   margin: 0;
   padding: 0;
 }
@@ -75,7 +77,31 @@ h6 {
 }
 
 p {
-  font-size: 20px;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+hr {
+  width: 93%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 3px solid #e3dcb8;
+}
+
+hr:last-child {
+  width: 93%;
+  border: 3px solid #e3dcb8;
+}
+
+ul {
+  list-style-type: none;
+}
+ul li {
+  list-style-type: none;
 }
 
 .section {
@@ -92,10 +118,12 @@ p {
   background-color: #c7a6cd;
 }
 .section-three {
-  background-color: #e0b1cb;
+  background-color: #231942;
 }
 .section-single {
-  background-color: #e0b1cb;
+  background-color: #c7a6cd;
+  outline: 10px dashed #231942;
+  outline-offset: -4px;
   margin: 64px 0;
 }
 
@@ -106,10 +134,10 @@ p {
   justify-content: center;
 }
 .box-main {
-  background-color: white;
-  outline: 10px solid #e0b1cb;
-  outline-offset: -10px;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.box-main-two {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .container-one {
@@ -118,7 +146,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e0b1cb;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .container-two {
@@ -128,21 +156,36 @@ p {
   justify-content: space-between;
   align-items: center;
 }
+.container-two img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+}
 
 .block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 100%;
   width: 760px;
 }
 .block-content-white {
   background-color: white;
-  outline: 10px solid #e0b1cb;
+  outline: 10px solid #231942;
   outline-offset: -10px;
 }
 .block-content-pink-one {
-  background-color: #e0b1cb;
+  background-color: #231942;
 }
 .block-content-pink-two {
-  background-color: #e0b1cb;
+  background-color: #231942;
+}
+.block h4, .block p {
+  color: white;
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
 
 .block-logo {
@@ -186,4 +229,22 @@ button {
   color: #231942;
   cursor: pointer;
   border: 6px solid #231942;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  width: 600px;
+  height: 100%;
+}
+nav .navigation {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+nav .navigation li {
+  display: flex;
+  justify-content: space-between;
 }/*# sourceMappingURL=main.css.map */

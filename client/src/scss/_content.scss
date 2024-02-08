@@ -5,7 +5,7 @@
   height: 520px;
   margin-bottom: 40px;
   &-one {
-    background-color: $color-block-pink-1;
+    background-color: $color-block-pink-3;
   }
   &-two {
     background-color: $color-block-pink-2;
@@ -14,7 +14,9 @@
     background-color: $color-block-pink-1;
   }
   &-single {
-    background-color: $color-block-pink-1;
+    background-color:  $color-block-pink-2;
+    outline: 10px dashed $color-block-pink-1;
+    outline-offset: -4px;
     margin: 64px 0;
   }
 }
@@ -25,10 +27,10 @@
   display: flex;
   justify-content: center;
   &-main {
-    background-color: $color-block-white;
-    outline: 10px solid $color-block-pink-1;
-    outline-offset: -10px;
-    background-color: $color-block-white;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  &-main-two {
+    background-color: rgba(0, 0, 0, 0.4);
   }
 }
 
@@ -38,7 +40,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $color-block-pink-1;
+  background-color: rgba(0, 0, 0, 0.4);
+
 }
 .container-two {
   width: 100%;
@@ -46,8 +49,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+  }
 }
 .block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 100%;
   width: 760px;
   &-content-white {
@@ -60,6 +73,11 @@
   }
   &-content-pink-two {
     background-color: $color-block-pink-1;
+  }
+  h4,p{
+    color: $color-font;
+    margin-left: 10px;
+    margin-bottom: 10px;
   }
 }
 

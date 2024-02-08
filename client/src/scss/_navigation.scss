@@ -1,0 +1,16 @@
+nav {
+    display: flex;
+    align-items: center;
+    width: 600px;
+    height: 100%;
+    .navigation {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        height: fit-content;
+        li {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
