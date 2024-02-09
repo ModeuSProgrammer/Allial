@@ -4,7 +4,7 @@ form {
   align-items: center;
   justify-content: start;
   h2 {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   input {
     display: flex;
@@ -23,8 +23,10 @@ button {
   width: fit-content;
   height: fit-content;
   padding: 10px 70px;
-  background-color: transparent;
-  color: $color-button;
+  background-color: $color-button-bg-dashed;
+  color: $color-font-two;
   cursor: pointer;
-  border: 6px solid $color-button;
+  outline: 6px dashed $color-button-bg-dashed;
+  outline-offset: -4px;
+  border: transparent;
 }

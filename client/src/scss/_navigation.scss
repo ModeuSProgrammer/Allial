@@ -1,4 +1,4 @@
-nav {
+.header-nav {
     display: flex;
     align-items: center;
     width: 600px;
@@ -8,9 +8,33 @@ nav {
         display: flex;
         justify-content: space-between;
         height: fit-content;
+        color: $color-a-two;
         li {
             display: flex;
             justify-content: space-between;
+            a {
+                color: $color-a-two;
+            }
+        }
+    }
+}
+.footer-nav {
+    width: 250px;
+    height: fit-content;
+    .navigation {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: fit-content;
+        margin-top: 30px;
+        li {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            a {
+                color: $color-a-one;
+            }
         }
     }
 }

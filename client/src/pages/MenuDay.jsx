@@ -1,10 +1,7 @@
-
-import Section from "../components/section";
-import Box from "../components/box";
 import Image from "../components/Image";
-import Button from "../components/button";
+import MenuD from "../components/MenuD";
 
-function LogIn() {
+function MenuDay() {
   return (
     <div className="page">
       <header>
@@ -16,18 +13,8 @@ function LogIn() {
           </ul>
         </nav>
       </header>
-      <Section className="section section-single">
-        <Box className="box box-main-two">
-          <div className="container-one">
-            <form>
-              <h2>Авторизация</h2>
-              <input type="email" min={1} max={50} placeholder="Почта"></input>
-              <input type="password" min={1} max={50} placeholder="Пароль"></input>
-              <Button className="button" text="Вход"></Button>
-            </form>
-          </div>
-        </Box>
-      </Section>
+
+      <MenuD />
 
       <footer>
         <div className="container container-footer">
@@ -47,4 +34,4 @@ function LogIn() {
   );
 }
 
-export default LogIn;
+export default MenuDay;

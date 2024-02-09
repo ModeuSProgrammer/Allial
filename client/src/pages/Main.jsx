@@ -1,4 +1,3 @@
-import Footer from "../components/footer";
 import Image from "../components/Image";
 import Section from "../components/section";
 import Box from "../components/box";
@@ -7,7 +6,7 @@ function Main() {
   return (
     <div className="page">
       <header>
-        <nav>
+        <nav className="header-nav">
           <ul className="navigation">
             <li><a href="/">Главная</a></li>
             <li><a href="/menuday">Меню на день</a></li>
@@ -42,8 +41,22 @@ function Main() {
         </Box>
       </Section>
 
-      <Footer />
-    </div>
+      <footer>
+        <div className="container container-footer">
+          <div className="block-logo" >
+            <Image source="/img/logo.png" alt="Аллиал" className={"logo"} />
+          </div>
+          <nav className="footer-nav">
+            <ul className="navigation">
+              <li><a href="/">Главная</a></li>
+              <li><a href="/menuday">Меню на день</a></li>
+              <li><a href="/auth">Авторизация</a></li>
+            </ul>
+          </nav>
+        </div>
+      </footer >
+
+    </div >
   );
 }
 
