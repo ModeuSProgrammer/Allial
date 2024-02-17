@@ -12,7 +12,7 @@ class MenuD extends React.Component {
               <div className="container-list">
                 <h2>Меню на день</h2>
                 <div className="list-menu-day">
-                  <div className="list-menu-title">
+                  <div>
                     <h5>Первое</h5>
                     <h5>Второе</h5>
                     <h5>Напиток</h5>

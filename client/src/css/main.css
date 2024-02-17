@@ -223,35 +223,6 @@ ul li {
   height: 90%;
 }
 
-.list-menu-day {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
-}
-.list-menu-day-title {
-  width: 100px;
-  height: 100px;
-}
-
-.container-list {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  width: 100%;
-  height: 100%;
-}
-.container-list h2 {
-  margin: 10px auto;
-  margin-bottom: 50px;
-}
-.container-list h5 {
-  margin: 10px;
-}
-.container-list .list-menu-value h5 {
-  color: #231942;
-}
-
 form {
   display: flex;
   flex-direction: column;
@@ -330,4 +301,108 @@ button {
 }
 .footer-nav .navigation li a {
   color: #231942;
+}
+
+.calendar-numbers {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 10px;
+}
+.calendar-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 830px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.calendar-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  margin: 8px 25px;
+  width: 55px;
+  height: 55px;
+  border-radius: 100%;
+}
+
+.container-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+.container-list h2 {
+  margin: 10px auto;
+  margin-bottom: 50px;
+}
+.container-list h5 {
+  margin: 10px;
+}
+.container-list .list-menu-value h5 {
+  color: #231942;
+}
+
+.list-menu-day {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.list-menu-day-title {
+  width: 100px;
+  height: 100px;
+}
+
+.comment-block {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.comment-block .comment-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.comment-block .comment-element {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  background-color: white;
+  margin-bottom: 20px;
+}
+.comment-block .comment-element p {
+  overflow: hidden;
+  word-wrap: break-word;
+  height: 70px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 10px;
+}
+.comment-block .comment-element .comment-delete {
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.comment-block .comment-element .comment-delete button {
+  font-size: 18px;
+  padding: 5px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }/*# sourceMappingURL=main.css.map */
