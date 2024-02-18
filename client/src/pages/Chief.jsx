@@ -2,23 +2,23 @@ import Image from "../components/Image";
 import Section from "../components/section";
 import Box from "../components/box";
 import Calendar from "../components/Calendar";
-import Comment from "../components/Comment";
+import CreateMenu from "../components/create-menu";
+import CommentChief from "../components/Comment-blocks/Comment-chief";
 
 function Cheif() {
   return (
     <div className="page">
       <header>
         <nav className="header-nav">
-          <ul className="navigation">
+          <ul className="navigation navigation-one">
             <li><a href="/logout">Выход</a></li>
           </ul>
         </nav>
       </header>
 
+      <CreateMenu />
       <Calendar />
-      <div>Тут ещё два блока доработать блок изменения блюда и блок меню на день доработать отзывы, убрать крестик плюс меню сверху навигация по блокам страницы</div>
-
-      <Comment />
+      <CommentChief />
 
       <footer>
         <div className="container container-footer">

@@ -17,7 +17,7 @@ class MenuD extends React.Component {
                     <h5>Второе</h5>
                     <h5>Напиток</h5>
                     <h5>Десерт</h5>
-                    <h5>Дополнительно</h5>
+                    <br />
                     <h5>Дата</h5>
                   </div>
                   <div className="list-menu-value">
@@ -25,8 +25,8 @@ class MenuD extends React.Component {
                     <h5>2</h5>
                     <h5>3</h5>
                     <h5>4</h5>
+                    <br />
                     <h5>5</h5>
-                    <h5>6 </h5>
                   </div>
                 </div>
               </div>

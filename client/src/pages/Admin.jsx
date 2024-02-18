@@ -1,9 +1,7 @@
 import Image from "../components/Image";
-import Section from "../components/section";
-import Box from "../components/box";
 import MenuD from "../components/MenuD";
 import Calendar from "../components/Calendar";
-import Comment from "../components/Comment";
+import Comment from "../components/Comment-blocks/Comment";
 
 function Admin() {
   return (

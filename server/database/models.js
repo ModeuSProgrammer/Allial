@@ -62,16 +62,6 @@ const Drink = sequelize.define('Drink', {
   {
     timestamps: false
   })
-
-const Additional = sequelize.define('Additional', {
-  ID: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-  title: { type: DataTypes.STRING, unique: true },
-  weight: { type: DataTypes.STRING, }
-},
-  {
-    timestamps: false
-  })
-
 const Comment = sequelize.define('Comment', {
   ID: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   text: { type: DataTypes.STRING },
@@ -99,12 +89,9 @@ Menu.belongsTo(Dessert)
 Drink.hasOne(Menu)
 Menu.belongsTo(Drink)
 
-Menu.hasMany(Additional)
-Additional.belongsTo(Menu)
-
 Menu.hasMany(Comment)
 Comment.belongsTo(Menu)
 
 module.exports = {
-  User, Role, Menu, Drink, Dessert, Comment, Additional, Second, First
+  User, Role, Menu, Drink, Dessert, Comment, Second, First
 }

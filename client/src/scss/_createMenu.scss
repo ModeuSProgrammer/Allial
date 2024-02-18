@@ -1,0 +1,45 @@
+.container-create-menu {
+  margin-top: -100px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  .create-menu-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 900px;
+    height: 250px;
+  }
+  .create-menu-title h5 {
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    height: fit-content;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  .create-menu-selects select {
+    display: flex;
+    width: 350px;
+    flex-direction: column;
+    font-size: 24px;
+    margin-bottom: 15px;
+    border: 4px solid $color-form;
+  }
+  .crate-menu-date {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 10px auto;
+  }
+  .create-menu-button {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    button {
+      padding: 10px;
+    }
+  }
+}

@@ -30,7 +30,7 @@ function AddFood() {
                 <option>Дополнение</option>
               </select>
               <input type="text" min={1} max={50} placeholder="Название"></input>
-              <input type="number" min={1} max={50} placeholder="Грамм"></input>
+              <input type="number" min={1} max={1000} placeholder="Грамм"></input>
               <Button className="button" text="Сохранить"></Button>
             </form>
           </div>

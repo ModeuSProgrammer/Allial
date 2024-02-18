@@ -2,7 +2,7 @@ import Image from "../components/Image";
 import Section from "../components/section";
 import Box from "../components/box";
 import Calendar from "../components/Calendar";
-import Comment from "../components/Comment";
+import CommentUser from "../components/Comment-blocks/Comment-user";
 import MenuD from "../components/MenuD";
 
 function User() {
@@ -10,7 +10,7 @@ function User() {
     <div className="page">
       <header>
         <nav className="header-nav">
-          <ul className="navigation">
+          <ul className="navigation navigation-one">
             <li><a href="/logout">Выход</a></li>
           </ul>
         </nav>
@@ -18,8 +18,7 @@ function User() {
 
       <MenuD />
       <Calendar />
-      <div>Поменять блок коментариев на добавление а не просмотр и доработать меню</div>
-      <Comment />
+      <CommentUser />
 
       <footer>
         <div className="container container-footer">

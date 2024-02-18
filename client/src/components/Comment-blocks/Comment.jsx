@@ -1,6 +1,6 @@
 import React from "react";
-import Section from "./section";
-import Box from "./box";
+import Section from "../section";
+import Box from "../box";
 
 class Comment extends React.Component {
   render() {

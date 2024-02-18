@@ -295,8 +295,8 @@ button {
 }
 .container-food form select {
   border: 4px solid #e3dcb8;
-  width: 360px;
-  height: 40px;
+  width: 430px;
+  height: 50px;
   font-size: 24px;
   margin: 15px auto;
 }
@@ -322,6 +322,14 @@ button {
 .header-nav .navigation li a {
   color: #ffffff;
 }
+.header-nav .navigation-one {
+  display: flex;
+  justify-content: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  margin: 0 auto;
+}
 
 .footer-nav {
   width: 250px;
@@ -344,6 +352,90 @@ button {
 }
 .footer-nav .navigation li a {
   color: #231942;
+}
+
+.comment-block {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.comment-block .comment-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.comment-block .comment-element {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  background-color: white;
+  margin-bottom: 20px;
+}
+.comment-block .comment-element p {
+  overflow: hidden;
+  word-wrap: break-word;
+  height: 70px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 10px;
+}
+.comment-block .comment-element .comment-delete {
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  margin: 8px 5px;
+  padding: 0;
+  background-image: linear-gradient(135deg, #e3dcb8 0%, #e0b1cb 100%);
+  box-shadow: 0 20px 30px -6px rgba(35, 25, 66, 0.5);
+  outline: none;
+  cursor: pointer;
+  border: none;
+  font-size: 24px;
+  color: #231942;
+}
+
+.button-delete:hover {
+  transform: translateY(3px);
+  box-shadow: none;
+}
+
+.button-delete:hover {
+  opacity: 1;
+}
+
+.comment-form h2 {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.comment-form textarea {
+  margin-top: 10px;
+  border: 4px solid #e3dcb8;
+  height: 150px;
+  width: 800px;
+  font-size: 20px;
+  resize: none;
+}
+.comment-form button {
+  font-size: 24px;
+  margin-top: 50px;
 }
 
 .calendar-numbers {
@@ -418,67 +510,50 @@ button {
   height: 100px;
 }
 
-.comment-block {
+.container-create-menu {
+  margin-top: -100px;
   display: flex;
-  align-items: center;
-  flex-direction: column;
   width: 100%;
-  height: 100%;
-}
-.comment-block .comment-list {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  width: 90%;
-  height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-.comment-block .comment-element {
-  display: flex;
   flex-direction: column;
-  width: 95%;
-  background-color: white;
+}
+.container-create-menu .create-menu-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 900px;
+  height: 250px;
+}
+.container-create-menu .create-menu-title h5 {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  flex-direction: column;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-right: 20px;
   margin-bottom: 20px;
 }
-.comment-block .comment-element p {
-  overflow: hidden;
-  word-wrap: break-word;
-  height: 70px;
-  width: 95%;
-  margin: 0 auto;
-  padding: 10px;
-}
-.comment-block .comment-element .comment-delete {
-  width: 95%;
-  margin: 0 auto;
-  margin-top: 5px;
+.container-create-menu .create-menu-selects select {
   display: flex;
-  justify-content: space-between;
-}
-
-.button-delete {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 35px;
-  height: 35px;
-  margin: 8px 5px;
-  padding: 0;
-  background-image: linear-gradient(135deg, #e3dcb8 0%, #e0b1cb 100%);
-  box-shadow: 0 20px 30px -6px rgba(35, 25, 66, 0.5);
-  outline: none;
-  cursor: pointer;
-  border: none;
+  width: 350px;
+  flex-direction: column;
   font-size: 24px;
-  color: #231942;
+  margin-bottom: 15px;
+  border: 4px solid #e3dcb8;
 }
-
-.button-delete:hover {
-  transform: translateY(3px);
-  box-shadow: none;
+.container-create-menu .crate-menu-date {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 10px auto;
 }
-
-.button-delete:hover {
-  opacity: 1;
+.container-create-menu .create-menu-button {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+.container-create-menu .create-menu-button button {
+  padding: 10px;
 }/*# sourceMappingURL=main.css.map */

@@ -1,4 +1,3 @@
-
 import Section from "../components/section";
 import Box from "../components/box";
 import Image from "../components/Image";
