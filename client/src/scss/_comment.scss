@@ -34,12 +34,31 @@
       margin-top: 5px;
       display: flex;
       justify-content: space-between;
-      button {
-        font-size: 18px;
-        padding: 5px;
-        width: fit-content;
-        height: fit-content;
-      }
     }
   }
+}
+.button-delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  margin: 8px 5px;
+  padding: 0;
+
+  background-image: linear-gradient(135deg, #e3dcb8 0%, #e0b1cb 100%);
+  box-shadow: 0 20px 30px -6px rgba(#231942, 0.5);
+  outline: none;
+  cursor: pointer;
+  border: none;
+  font-size: 24px;
+  color: #231942;
+}
+
+.button-delete:hover {
+  transform: translateY(3px);
+  box-shadow: none;
+}
+.button-delete:hover {
+  opacity: 1;
 }

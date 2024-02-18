@@ -1,11 +1,9 @@
 import Image from "../components/Image";
 import Section from "../components/section";
 import Box from "../components/box";
-import MenuD from "../components/MenuD";
-import Calendar from "../components/Calendar";
-import Comment from "../components/Comment";
+import Button from "../components/button";
 
-function Admin() {
+function AddFood() {
   return (
     <div className="page">
       <header>
@@ -19,11 +17,25 @@ function Admin() {
         </nav>
       </header>
 
-      <MenuD />
-
-      <Calendar />
-
-      <Comment />
+      <Section className="section section-single">
+        <Box className="box box-main-two">
+          <div className="container-one container-food">
+            <form>
+              <h2>Добавить Блюдо</h2>
+              <select>
+                <option>Первое</option>
+                <option>Второе</option>
+                <option>Десерт</option>
+                <option>Напиток</option>
+                <option>Дополнение</option>
+              </select>
+              <input type="text" min={1} max={50} placeholder="Название"></input>
+              <input type="number" min={1} max={50} placeholder="Грамм"></input>
+              <Button className="button" text="Сохранить"></Button>
+            </form>
+          </div>
+        </Box>
+      </Section>
 
       <footer>
         <div className="container container-footer">
@@ -40,9 +52,8 @@ function Admin() {
           </nav>
         </div>
       </footer >
-
-    </div >
+    </div>
   );
 }
 
-export default Admin;
+export default AddFood;
