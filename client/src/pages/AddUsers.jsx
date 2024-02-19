@@ -22,8 +22,13 @@ function AddUsers() {
           <div className="container-one container-users">
             <form>
               <h2>Добавить пользователя</h2>
-              <input type="email" min={1} max={50} placeholder="Почта"></input>
-              <input type="password" min={1} max={50} placeholder="Пароль"></input>
+              <select name="roles" >
+                <option value={1}>Пользователь</option>
+                <option value={2}>Шеф</option>
+                <option value={3}>Админ</option>
+              </select>
+              <input type="email" min={1} max={50} placeholder="Почта" required />
+              <input type="password" min={1} max={50} placeholder="Пароль" required />
               <Button className="button" text="Добавить"></Button>
             </form>
             <form>
