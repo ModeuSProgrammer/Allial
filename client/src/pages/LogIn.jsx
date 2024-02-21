@@ -3,7 +3,17 @@ import Box from "../components/box";
 import Image from "../components/Image";
 import Button from "../components/button";
 
+import { Auth } from '../actions/user';
+import { useState } from "react";
+
+
 function LogIn() {
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const AuthClick = () => {
+    Auth(email, password)
+    alert('sss')
+  }
   return (
     <div className="page">
       <header>
@@ -20,9 +30,9 @@ function LogIn() {
           <div className="container-one">
             <form>
               <h2>Авторизация</h2>
-              <input type="email" min={1} max={50} placeholder="Почта"></input>
-              <input type="password" min={1} max={50} placeholder="Пароль"></input>
-              <Button className="button" text="Вход"></Button>
+              <input type="email" name="email" onChange={(e) => setEmail(e.target.value)} min={1} max={50} placeholder="Почта" />
+              <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} min={1} max={50} placeholder="Пароль" />
+              <Button className="button" text="Вход" onClick={AuthClick}></Button>
             </form>
           </div>
         </Box>
