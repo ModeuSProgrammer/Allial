@@ -1,17 +1,19 @@
 import Image from "../components/Image";
-import Section from "../components/section";
-import Box from "../components/box";
 import Calendar from "../components/Calendar";
 import CreateMenu from "../components/create-menu";
 import CommentChief from "../components/Comment-blocks/Comment-chief";
 
-function Cheif() {
+import { Link } from "react-router-dom";
+
+const Cheif = () => {
   return (
     <div className="page">
       <header>
         <nav className="header-nav">
-          <ul className="navigation navigation-one">
-            <li><a href="/logout">Выход</a></li>
+          <ul className="navigation">
+            <li><Link to="/chief">Главная</Link></li>
+            <li><Link to="/menuday">Меню на день</Link></li>
+            <li><Link to="/logout">Выход</Link></li>
           </ul>
         </nav>
       </header>

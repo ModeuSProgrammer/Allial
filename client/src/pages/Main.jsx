@@ -2,15 +2,16 @@ import Image from "../components/Image";
 import Section from "../components/section";
 import Box from "../components/box";
 
-function Main() {
+import { Link } from "react-router-dom";
+
+const Main = () => {
   return (
     <div className="page">
       <header>
         <nav className="header-nav">
           <ul className="navigation">
-            <li><a href="/">Главная</a></li>
-            <li><a href="/menuday">Меню на день</a></li>
-            <li><a href="/auth">Авторизация</a></li>
+            <li><Link to="/">Главная</Link></li>
+            <li><Link to="/auth">Авторизация</Link></li>
           </ul>
         </nav>
       </header>
@@ -18,6 +19,10 @@ function Main() {
       <Section className="section section-one">
         <Box className="box box-main">
           <div className="container-one">
+            <div className="main-art">
+              <Image source="/img/main-art.png" alt="Добро пожаловать!
+            Ждём вас 10:00 - 18:00 Cб., Вс. - выходной" className="art" />
+            </div>
           </div>
         </Box>
       </Section>
@@ -25,7 +30,7 @@ function Main() {
       <Section className="section section-two">
         <Box className="box">
           <div className="container-two">
-            <Image source="/img/logo.png" alt="Аллиал" className={"logo"} />
+            <Image source="/img/logo.png" alt="Аллиал" className="logo" />
             <div className="block block-content-pink-one">
               <h4>Ваш путь к космическому успеху<br />начинается с баланса в питании!</h4>
               <hr />

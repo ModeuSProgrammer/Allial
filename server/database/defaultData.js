@@ -29,8 +29,8 @@ const DessertFood = [
 ]
 
 
-const AdminPass = bcrypt.hashSync('root@root.ru', 5)
-const Admin = { email: 'root', password: AdminPass, RoleID: 3 }
+const AdminPass = bcrypt.hashSync('root', 5)
+const Admin = { email: 'root@root.ru', password: AdminPass, RoleID: 3 }
 
 
 class defaultData {
@@ -47,6 +47,7 @@ class defaultData {
       return console.log('User, chief, admin add')
     }
   }
+
   async CreateAdmin() {
     const NoneAdmin = await User.findAll({ where: { RoleID: 3 } })
     if (NoneAdmin.length === 0) {
@@ -57,6 +58,7 @@ class defaultData {
       return console.log('There are Admin')
     }
   }
+
   async AddBaseFood() {
     if ((await First.findAll()).length === 0) {
       for (const eat of FirstFood) {

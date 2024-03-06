@@ -1,15 +1,21 @@
 import Image from "../components/Image";
 import MenuD from "../components/MenuD";
 
-function MenuDay() {
+import { Link } from "react-router-dom";
+import { logout } from "../store/userReducer";
+import { useDispatch } from "react-redux";
+
+const MenuDay = () => {
+  const dispatch = useDispatch()
   return (
     <div className="page">
       <header>
         <nav className="header-nav">
           <ul className="navigation">
-            <li><a href="/">Главная</a></li>
-            <li><a href="/menuday">Меню на день</a></li>
-            <li><a href="/auth">Авторизация</a></li>
+            <li><Link to="/">Главная</Link></li>
+            <li><Link to="/menuday">Меню на день</Link></li>
+            <li><Link to="/" onClick={() => dispatch(logout())}>Выход</Link></li>
+            <li>прописать в зависимости от того какая роль учесть</li>
           </ul>
         </nav>
       </header>

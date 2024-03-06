@@ -3,16 +3,19 @@ import Section from "../components/section";
 import Box from "../components/box";
 import Button from "../components/button";
 
-function AddFood() {
+import { Link } from "react-router-dom";
+
+const AddFood = () => {
   return (
     <div className="page">
       <header>
         <nav className="header-nav">
           <ul className="navigation">
-            <li><a href="/admin">Главная</a></li>
-            <li><a href="/adduser">Пользователи</a></li>
-            <li><a href="/addfood">Блюда</a></li>
-            <li><a href="/logout">Выход</a></li>
+            <li><Link to="/admin">Главная</Link></li>
+            <li><Link to="/menuday">Меню на день</Link></li>
+            <li><Link to="/adduser">Пользователи</Link></li>
+            <li><Link to="/addfood">Блюда</Link></li>
+            <li><Link to="/logout">Выход</Link></li>
           </ul>
         </nav>
       </header>
@@ -27,7 +30,6 @@ function AddFood() {
                 <option>Второе</option>
                 <option>Десерт</option>
                 <option>Напиток</option>
-                <option>Дополнение</option>
               </select>
               <input type="text" min={1} max={50} placeholder="Название"></input>
               <input type="number" min={1} max={1000} placeholder="Грамм"></input>
