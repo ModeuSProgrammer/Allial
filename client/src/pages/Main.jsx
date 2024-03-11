@@ -53,9 +53,8 @@ const Main = () => {
           </div>
           <nav className="footer-nav">
             <ul className="navigation">
-              <li><a href="/">Главная</a></li>
-              <li><a href="/menuday">Меню на день</a></li>
-              <li><a href="/auth">Авторизация</a></li>
+              <li><Link to="/">Главная</Link></li>
+              <li><Link to="/auth">Авторизация</Link></li>
             </ul>
           </nav>
         </div>

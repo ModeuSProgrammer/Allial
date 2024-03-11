@@ -43,7 +43,8 @@ form {
     input {
       width: 400px;
     }
-    button {
+    .button {
+      width: fit-content;
       padding: 10px 20px;
       font-size: 20px;
     }
@@ -67,7 +68,7 @@ form {
     input {
       width: 400px;
     }
-    button {
+    .button {
       padding: 10px 20px;
       font-size: 24px;
     }

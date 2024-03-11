@@ -4,8 +4,12 @@ import Box from "../components/box";
 import Button from "../components/button";
 
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux"
+
+import { logout } from "../store/userReducer";
 
 const AddFood = () => {
+  const dispatch = useDispatch()
   return (
     <div className="page">
       <header>
@@ -14,8 +18,8 @@ const AddFood = () => {
             <li><Link to="/admin">Главная</Link></li>
             <li><Link to="/menuday">Меню на день</Link></li>
             <li><Link to="/adduser">Пользователи</Link></li>
-            <li><Link to="/addfood">Блюда</Link></li>
-            <li><Link to="/logout">Выход</Link></li>
+            <li><Link tof="/addfood">Блюда</Link></li>
+            <li><Link to="/" onClick={() => dispatch(logout())}>Выход</Link></li>
           </ul>
         </nav>
       </header>
@@ -46,10 +50,11 @@ const AddFood = () => {
           </div>
           <nav className="footer-nav">
             <ul className="navigation">
-              <li><a href="/admin">Главная</a></li>
-              <li><a href="/adduser">Пользователи</a></li>
-              <li><a href="/addfood">Блюда</a></li>
-              <li><a href="/logout">Выход</a></li>
+              <li><Link to="/admin">Главная</Link></li>
+              <li><Link to="/menuday">Меню на день</Link></li>
+              <li><Link to="/adduser">Пользователи</Link></li>
+              <li><Link tof="/addfood">Блюда</Link></li>
+              <li><Link to="/" onClick={() => dispatch(logout())}>Выход</Link></li>
             </ul>
           </nav>
         </div>

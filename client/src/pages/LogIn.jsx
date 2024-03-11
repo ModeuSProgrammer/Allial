@@ -17,6 +17,14 @@ const LogIn = () => {
     dispatch(login('root@root.ru', 'root'));
   };
 
+  const handleLogin2 = () => {
+    dispatch(login('user@user.ru', 'user'));
+  };
+
+  const handleLogin3 = () => {
+    dispatch(login('chief@chief.ru', 'chief'));
+  };
+
   return (
     <div className="page">
       <header>
@@ -32,7 +40,10 @@ const LogIn = () => {
           <div className="container-one">
             <form onSubmit={e => { e.preventDefault(); }}>
               <h2>Авторизация</h2>
-              <button onClick={handleLogin}>Login</button>
+              <button onClick={handleLogin}>admin</button>
+              <button onClick={handleLogin2}>user</button>
+              <button onClick={handleLogin3}>chief</button>
+
               <input type="email" value={userEmail} onChange={(event) => SetEmail(event.target.value)} min={1} max={50} placeholder="Почта" />
               <input type="password" value={userPass} onChange={(event) => SetPass(event.target.value)} min={1} max={50} placeholder="Пароль" />
               <input type="submit" className="button" value="Вход" onClick={() => dispatch(login(userEmail, userPass))} />

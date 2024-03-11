@@ -5,7 +5,12 @@ import CommentChief from "../components/Comment-blocks/Comment-chief";
 
 import { Link } from "react-router-dom";
 
+import { useDispatch } from "react-redux"
+import { logout } from "../store/userReducer";
+
 const Cheif = () => {
+  const dispatch = useDispatch()
+
   return (
     <div className="page">
       <header>
@@ -13,7 +18,7 @@ const Cheif = () => {
           <ul className="navigation">
             <li><Link to="/chief">Главная</Link></li>
             <li><Link to="/menuday">Меню на день</Link></li>
-            <li><Link to="/logout">Выход</Link></li>
+            <li><Link to="/" onClick={() => dispatch(logout())}>Выход</Link></li>
           </ul>
         </nav>
       </header>
@@ -29,7 +34,11 @@ const Cheif = () => {
           </div>
           <nav className="footer-nav">
             <ul className="navigation">
-              <li><a href="/logout">Выход</a></li>
+              <ul className="navigation">
+                <li><Link to="/chief">Главная</Link></li>
+                <li><Link to="/menuday">Меню на день</Link></li>
+                <li><Link to="/" onClick={() => dispatch(logout())}>Выход</Link></li>
+              </ul>
             </ul>
           </nav>
         </div>

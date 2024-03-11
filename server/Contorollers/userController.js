@@ -16,9 +16,11 @@ class UserController {
   // add new user in system
   async Registration(req, res) {
     try {
-      // if (req.user.RoleID !== 3) {
-      //   return res.status(400).json({ message: 'Ошибка прав доступа' })
-      // }
+      const UserRole = req.body.RoleID
+      console.log(UserRole)
+      if (UserRole !== 3) {
+        return res.status(400).json({ message: 'Ошибка прав доступа' })
+      }
       const { roles, email, password } = req.body
       const newRole = Number(roles)
       const hashPass = await bcrypt.hash(password, 5)
@@ -58,10 +60,11 @@ class UserController {
 
   async Delete(req, res) {
     try {
-      // if (req.user.RoleID !== 3) {
-      //   return res.status(400).json({ message: 'Ошибка прав доступа' })
-      // }
-      const { email } = req.body
+      if (req.user.RoleID !== 3) {
+        return res.status(400).json({ message: 'Ошибка прав доступа' })
+      }
+      const { email } = req.query
+      console.log(email)
       if (email.length === 0) {
         return res.status(401).json({ message: 'Введите почту пользователя' })
       }

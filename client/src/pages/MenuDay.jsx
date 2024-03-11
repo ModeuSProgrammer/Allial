@@ -3,40 +3,83 @@ import MenuD from "../components/MenuD";
 
 import { Link } from "react-router-dom";
 import { logout } from "../store/userReducer";
-import { useDispatch } from "react-redux";
+
+import { useDispatch, useSelector } from "react-redux"
+import { useEffect } from "react";
 
 const MenuDay = () => {
   const dispatch = useDispatch()
+
+  const dataUser = useSelector(state => state.user.currentUser)
+  let dataUserRoleID = dataUser === undefined ? 0 : dataUser.RoleID
+  console.log(dataUserRoleID)
+
   return (
     <div className="page">
       <header>
         <nav className="header-nav">
-          <ul className="navigation">
-            <li><Link to="/">Главная</Link></li>
-            <li><Link to="/menuday">Меню на день</Link></li>
-            <li><Link to="/" onClick={() => dispatch(logout())}>Выход</Link></li>
-            <li>прописать в зависимости от того какая роль учесть</li>
-          </ul>
+          {dataUserRoleID === 3 ? (
+            <ul className="navigation">
+              <li><Link to="/admin">Главная</Link></li>
+              <li><Link to="/menuday">Меню на день</Link></li>
+              <li><Link to="/adduser">Пользователи</Link></li>
+              <li><Link to="/addfood">Блюда</Link></li>
+              <li><Link to="/" onClick={() => dispatch(logout())}>Выход</Link></li>
+            </ul>
+          ) : (dataUserRoleID === 2 ?
+            (<ul className="navigation">
+              <li><Link to="/chief">Главная</Link></li>
+              <li><Link to="/menuday">Меню на день</Link></li>
+              <li><Link to="/" onClick={() => dispatch(logout())}>Выход</Link></li>
+            </ul>
+            ) : (dataUserRoleID === 1 ? (
+              <ul className="navigation">
+                <li><Link to="/user">Главная</Link></li>
+                <li><Link to="/menuday">Меню на день</Link></li>
+                <li><Link to="/" onClick={() => dispatch(logout())}>Выход</Link></li>
+              </ul>
+            ) : (
+              <p onClick={() => dispatch(logout())} >Перезайдите в аккаунт пожалуйста, тыкните на данный текст чтобы выйти</p>
+            )))}
         </nav>
       </header>
 
-      <MenuD />
+      < MenuD />
 
       <footer>
         <div className="container container-footer">
-          <div className="block-logo" >
+          {/* не забудь убрать выход с клика по лого */}
+          <div className="block-logo" onClick={() => dispatch(logout())}>
             <Image source="/img/logo.png" alt="Аллиал" className={"logo"} />
           </div>
           <nav className="footer-nav">
-            <ul className="navigation">
-              <li><a href="/">Главная</a></li>
-              <li><a href="/menuday">Меню на день</a></li>
-              <li><a href="/auth">Авторизация</a></li>
-            </ul>
+            {dataUserRoleID === 3 ? (
+              <ul className="navigation">
+                <li><Link to="/admin">Главная</Link></li>
+                <li><Link to="/menuday">Меню на день</Link></li>
+                <li><Link to="/adduser">Пользователи</Link></li>
+                <li><Link to="/addfood">Блюда</Link></li>
+                <li><Link to="/" onClick={() => dispatch(logout())}>Выход</Link></li>
+              </ul>
+            ) : (dataUserRoleID === 2 ?
+              (<ul className="navigation">
+                <li><Link to="/chief">Главная</Link></li>
+                <li><Link to="/menuday">Меню на день</Link></li>
+                <li><Link to="/" onClick={() => dispatch(logout())}>Выход</Link></li>
+              </ul>
+              ) : (dataUserRoleID === 1 ? (
+                <ul className="navigation">
+                  <li><Link to="/user">Главная</Link></li>
+                  <li><Link to="/menuday">Меню на день</Link></li>
+                  <li><Link to="/" onClick={() => dispatch(logout())}>Выход</Link></li>
+                </ul>
+              ) : (
+                <p onClick={() => dispatch(logout())} >Выход</p>
+              )))}
           </nav>
         </div>
       </footer >
-    </div>
+    </div >
   );
 }
 

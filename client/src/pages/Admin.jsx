@@ -1,11 +1,15 @@
 import Image from "../components/Image";
-import MenuD from "../components/MenuD";
 import Calendar from "../components/Calendar";
 import Comment from "../components/Comment-blocks/Comment";
 
 import { Link } from "react-router-dom";
+import { logout } from "../store/userReducer";
+
+import { useDispatch } from "react-redux"
 
 const Admin = () => {
+  const dispatch = useDispatch()
+
   return (
     <div className="page">
       <header>
@@ -15,12 +19,11 @@ const Admin = () => {
             <li><Link to="/menuday">Меню на день</Link></li>
             <li><Link to="/adduser">Пользователи</Link></li>
             <li><Link to="/addfood">Блюда</Link></li>
-            <li><Link to="/logout">Выход</Link></li>
+            <li><Link to="/" onClick={() => dispatch(logout())}>Выход</Link></li>
           </ul>
         </nav>
       </header>
 
-      <MenuD />
       <Calendar />
       <Comment />
 
@@ -31,10 +34,11 @@ const Admin = () => {
           </div>
           <nav className="footer-nav">
             <ul className="navigation">
-              <li><a href="/admin">Главная</a></li>
-              <li><a href="/adduser">Пользователи</a></li>
-              <li><a href="/addfood">Блюда</a></li>
-              <li><a href="/logout">Выход</a></li>
+              <li><Link to="/admin">Главная</Link></li>
+              <li><Link to="/menuday">Меню на день</Link></li>
+              <li><Link to="/adduser">Пользователи</Link></li>
+              <li><Link to="/addfood">Блюда</Link></li>
+              <li><Link to="/" onClick={() => dispatch(logout())}>Выход</Link></li>
             </ul>
           </nav>
         </div>

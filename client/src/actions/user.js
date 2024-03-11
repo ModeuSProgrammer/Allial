@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { setUser } from "../store/userReducer"
 
-export const login = (email, password) => {
+export function login(email, password) {
   return async dispatch => {
     try {
       const response = await axios.post(`http://localhost:7777/api/auth`, {
@@ -17,17 +17,14 @@ export const login = (email, password) => {
   }
 }
 
-export const checkAuth = () => {
+export function checkAuth() {
   return async dispatch => {
     try {
-      // получение токена из хранилища
       const token = localStorage.getItem('token')
       if (token) {
-        // проверка наличия пользователя по токену 
         const response = await axios.get(`http://localhost:7777/api/check`, {
           headers: { Authorization: `Bearer ${token}` }
         })
-        //создание пользователя (заполенение его данными)
         dispatch(setUser(response.data.user))
       }
     }
@@ -36,17 +33,19 @@ export const checkAuth = () => {
       alert(error.response.data.message);
       localStorage.removeItem('token')
     }
-
   }
 }
 
-export async function RegistUser(roles, email, password) {
+
+export async function RegistUser(RoleID, roles, email, password) {
   try {
     const response = await axios.post(`http://localhost:7777/api/adduser`, {
+      RoleID,
       roles,
       email,
-      password
-    });
+      password,
+      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+    })
     alert(response.data.message);
   } catch (error) {
     console.error(error);
@@ -56,12 +55,12 @@ export async function RegistUser(roles, email, password) {
 
 export async function DeleteUser(email) {
   try {
-    const response = await axios.delete(`http://localhost:7777/api/adduser`, {
-      email
-    });
+    const response = await axios.delete(`http://localhost:7777/api/adduser?email=${email}`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+    })
     alert(response.data.message);
   } catch (error) {
     console.error(error);
-    alert('Ошибка  аутентификации');
+    alert('Ошибка аутентификации');
   }
 }
