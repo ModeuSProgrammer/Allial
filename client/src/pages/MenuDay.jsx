@@ -9,10 +9,7 @@ import { useEffect } from "react";
 
 const MenuDay = () => {
   const dispatch = useDispatch()
-
-  const dataUser = useSelector(state => state.user.currentUser)
-  let dataUserRoleID = dataUser === undefined ? 0 : dataUser.RoleID
-  console.log(dataUserRoleID)
+  const dataUserRoleID = useSelector(state => state.user.currentUser.RoleID)
 
   return (
     <div className="page">

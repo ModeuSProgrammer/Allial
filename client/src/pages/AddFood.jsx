@@ -1,15 +1,20 @@
 import Image from "../components/Image";
 import Section from "../components/section";
 import Box from "../components/box";
-import Button from "../components/button";
 
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 
+import { addFood } from "../actions/menu"
 import { logout } from "../store/userReducer";
+import { useState } from "react";
 
 const AddFood = () => {
   const dispatch = useDispatch()
+  const UserRoleID = useSelector(state => state.user.currentUser.RoleID)
+  const [title, SetTitle] = useState('')
+  const [weight, SetWeight] = useState('')
+  const [food, SetFood] = useState('1')
   return (
     <div className="page">
       <header>
@@ -27,17 +32,17 @@ const AddFood = () => {
       <Section className="section section-single">
         <Box className="box box-main-two">
           <div className="container-one container-food">
-            <form>
+            <form onSubmit={(e) => { e.preventDefault(); addFood(UserRoleID, food, title, weight) }}>
               <h2>Добавить Блюдо</h2>
-              <select>
-                <option>Первое</option>
-                <option>Второе</option>
-                <option>Десерт</option>
-                <option>Напиток</option>
+              <select value={food} onChange={e => SetFood(e.target.value)} >
+                <option value={1}>Первое</option>
+                <option value={2}>Второе</option>
+                <option value={3}>Десерт</option>
+                <option value={4}>Напиток</option>
               </select>
-              <input type="text" min={1} max={50} placeholder="Название"></input>
-              <input type="number" min={1} max={1000} placeholder="Грамм"></input>
-              <Button className="button" text="Сохранить"></Button>
+              <input type="text" min={1} max={50} onChange={(e) => SetTitle(e.target.value)} value={title} placeholder="Название"></input>
+              <input type="number" min={1} max={1000} onChange={(e) => SetWeight(e.target.value)} value={weight} placeholder="Грамм"></input>
+              <input className="button" text="Сохранить" type="submit" />
             </form>
           </div>
         </Box>

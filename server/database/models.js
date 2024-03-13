@@ -20,8 +20,8 @@ const Role = sequelize.define('Role', {
 
 const Menu = sequelize.define('Menu', {
   ID: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-  date: { type: DataTypes.DATE },
-  chef: { type: DataTypes.STRING },
+  date: { type: DataTypes.DATEONLY },
+  chief: { type: DataTypes.INTEGER },
 },
   {
     timestamps: false

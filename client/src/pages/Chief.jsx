@@ -1,15 +1,17 @@
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux"
+
 import Image from "../components/Image";
-import Calendar from "../components/Calendar";
 import CreateMenu from "../components/create-menu";
+import Calendar from "../components/Calendar";
 import CommentChief from "../components/Comment-blocks/Comment-chief";
 
 import { Link } from "react-router-dom";
-
-import { useDispatch } from "react-redux"
 import { logout } from "../store/userReducer";
 
 const Cheif = () => {
   const dispatch = useDispatch()
+  const UserRoleID = useSelector(state => state.user.currentUser.RoleID)
 
   return (
     <div className="page">

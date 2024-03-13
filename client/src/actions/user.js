@@ -23,6 +23,7 @@ export function checkAuth() {
       const token = localStorage.getItem('token')
       if (token) {
         const response = await axios.get(`http://localhost:7777/api/check`, {
+
           headers: { Authorization: `Bearer ${token}` }
         })
         dispatch(setUser(response.data.user))
@@ -39,13 +40,10 @@ export function checkAuth() {
 
 export async function RegistUser(RoleID, roles, email, password) {
   try {
-    const response = await axios.post(`http://localhost:7777/api/adduser`, {
-      RoleID,
-      roles,
-      email,
-      password,
-      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-    })
+    const response = await axios.post(`http://localhost:7777/api/adduser`,
+      { RoleID, roles, email, password },
+      { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } }
+    )
     alert(response.data.message);
   } catch (error) {
     console.error(error);

@@ -3,9 +3,9 @@ const bcrypt = require('bcrypt')
 const { User } = require('../database/models')
 
 // token for log in system and cheking
-const generateJWT = (email, RoleID) => {
+const generateJWT = (ID, email, RoleID) => {
   return jwt.sign(
-    { email, RoleID },
+    { ID, email, RoleID },
     process.env.secret_key,
     { expiresIn: '24h' }
   )
@@ -17,7 +17,6 @@ class UserController {
   async Registration(req, res) {
     try {
       const UserRole = req.body.RoleID
-      console.log(UserRole)
       if (UserRole !== 3) {
         return res.status(400).json({ message: 'Ошибка прав доступа' })
       }
@@ -38,7 +37,7 @@ class UserController {
     const user = await User.findOne({ where: { email: email } })
     const VerifPass = await bcrypt.compareSync(password, user.password)
     if (VerifPass === true) {
-      const token = generateJWT(user.email, user.RoleID)
+      const token = generateJWT(user.ID, user.email, user.RoleID)
       return res.status(200).json({
         token, user: {
           ID: user.ID,
@@ -54,7 +53,7 @@ class UserController {
   }
   // cheking user in systems
   async Check(req, res) {
-    const token = generateJWT(req.user.email, req.user.RoleID)
+    const token = generateJWT(req.user.ID, req.user.email, req.user.RoleID)
     return res.json({ token })
   }
 
