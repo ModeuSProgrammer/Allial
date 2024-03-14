@@ -14,21 +14,30 @@ class Menus {
       if (title.length === 0 || valueweight.length === 0) {
         return res.status(400).json({ message: 'Заполните все поля' })
       }
+      let allDataID
       switch (valuefood) {
         case 1: {
-          await First.create({ title: title, weight: valueweight })
+          allDataID = await First.findOne({ order: [['ID', 'DESC']] })
+          const MaxID = allDataID.ID + 1
+          await First.create({ ID: MaxID, title: title, weight: valueweight })
           return res.status(200).json({ message: `Блюдо добавленно ${title}` })
         }
         case 2: {
-          await Second.create({ title: title, weight: valueweight })
+          allDataID = await Second.findOne({ order: [['ID', 'DESC']] })
+          const MaxID = allDataID.ID + 1
+          await Second.create({ ID: MaxID, title: title, weight: valueweight })
           return res.status(200).json({ message: `Блюдо добавленно ${title}` })
         }
         case 3: {
-          await Dessert.create({ title: title, weight: valueweight })
+          allDataID = await Dessert.findOne({ order: [['ID', 'DESC']] })
+          const MaxID = allDataID.ID + 1
+          await Dessert.create({ ID: MaxID, title: title, weight: valueweight })
           return res.status(200).json({ message: `Блюдо добавленно ${title}` })
         }
         case 4: {
-          await Drink.create({ title: title, weight: valueweight })
+          allDataID = await Drink.findOne({ order: [['ID', 'DESC']] })
+          const MaxID = allDataID.ID + 1
+          await Drink.create({ ID: MaxID, title: title, weight: valueweight })
           return res.status(200).json({ message: `Блюдо добавленно ${title}` })
         }
         default: {
@@ -76,7 +85,7 @@ class Menus {
         return res.status(400).json({ message: 'Ошибка прав доступа' })
       }
 
-      if ((date.length || one.length || two.length || drink.length || dessert.length) === 0) {
+      if (date.length || one.length || two.length || drink.length || dessert.length === 0) {
         return res.status(200).json({ message: 'Заполните все поля' })
       }
 
