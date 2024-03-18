@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { getMenuDay } from '../store/menuReducer';
 
 export async function addFood(roles, food, title, weight) {
   try {
@@ -36,9 +37,31 @@ export async function CreateMenus(roles, emailChief, date, one, two, drink, dess
     }, {
       headers: { Authorization: `Beaerer ${localStorage.getItem('token')}` }
     })
-
     return alert(response.data.message)
   } catch (error) {
     return alert(error.response.data.message)
+  }
+}
+
+export function GetMenuDay() {
+  return dispatch => {
+    try {
+      const response = axios.get(`http://localhost:7777/api/menuday`, {
+        headers: { Authorization: `Beaerer ${localStorage.getItem('token')}` }
+      })
+      const Menu = async () => {
+        const datas = await response
+        if (datas.lenght != 0) {
+          return dispatch(getMenuDay(datas.data.menu))
+        }
+        else {
+          const datas = await response
+          return alert(datas.data.message)
+        }
+      }
+      Menu()
+    } catch (error) {
+      console.log(error)
+    }
   }
 }

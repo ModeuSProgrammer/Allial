@@ -1,4 +1,4 @@
-const { _attributes } = require("../database/db");
+const jwt = require('jsonwebtoken')
 const { User, Menu, First, Second, Dessert, Drink } = require("../database/models");
 
 class Menus {
@@ -84,8 +84,8 @@ class Menus {
       if (roles !== 2) {
         return res.status(400).json({ message: 'Ошибка прав доступа' })
       }
-
-      if (date.length || one.length || two.length || drink.length || dessert.length === 0) {
+      roles, emailChief, date, one, two, drink, dessert
+      if (date.length === 0 || one.length === 0 || two.length === 0 || drink.length === 0 || dessert.length === 0) {
         return res.status(200).json({ message: 'Заполните все поля' })
       }
 
@@ -104,11 +104,45 @@ class Menus {
         date: DayMenu, chief: UserCheif.ID, FirstID: firstData.ID,
         SecondID: secondData.ID, DessertID: dessertData.ID, DrinkID: drinkData.ID
       })
-
       return res.status(200).json({ message: 'Новое меню создано' })
     }
     catch (error) {
       return res.status(400).json({ message: 'Ошибка на сервере' + error })
+    }
+  }
+
+  async GetMenuForUser(req, res) {
+    try {
+      let token = req.headers.authorization.split(' ')[1]
+      token = jwt.decode(token, process.env.secret_key)
+      const date = new Date()
+      const day = date.getDate()
+      const mounth = (date.getMonth() + 1) < 10 ? `0${date.getMonth() + 1}` : (date.getMonth() + 1)
+      const yaer = date.getFullYear()
+      const DateMenu = yaer + '-' + mounth + '-' + day
+      const haveMenu = await Menu.findOne({ where: { date: DateMenu } })
+      if (haveMenu.length != 0) {
+        const data = haveMenu.dataValues
+        await User.update({ MenuID: data.ID }, { where: { ID: token.ID } })
+        const one = await First.findOne({ where: { ID: data.FirstID } })
+        const two = await Second.findOne({ where: { ID: data.SecondID } })
+        const drink = await Drink.findOne({ where: { ID: data.DrinkID } })
+        const dessert = await Dessert.findOne({ where: { ID: data.DessertID } })
+        const menu = {
+          date: DateMenu,
+          First: one.title,
+          Second: two.title,
+          Dessert: drink.title,
+          Drink: dessert.title
+        }
+        return res.status(200).json({ menu })
+      }
+      else {
+        return res.status(200).json({ message: 'Меню на этот день нет' })
+      }
+    }
+    catch (error) {
+      return res.status(400).json({ message: 'Ошибка на сервере' })
     }
   }
 }
