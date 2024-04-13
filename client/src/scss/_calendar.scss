@@ -43,3 +43,37 @@
 .calendar-number:hover {
   opacity: 1;
 }
+
+.section-changer {
+  background-color: $color-block-yellow;
+}
+.block-menu-calendar {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    display: flex;
+    justify-content: center;
+  }
+  h4 {
+    display: flex;
+    justify-content: center;
+    color: $color-font-three;
+  }
+  h5 {
+    margin-top: 20px;
+    color: $color-font-two;
+  }
+  .block-menu-calendar-info {
+    margin-top: 20px;
+    width: 1000px;
+    height: 260px;
+    outline: 6px dashed $color-font-three;
+    outline-offset: -1px;
+    border: 6px solid $color-font-three;
+    background-color: $color-block-purple;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+}

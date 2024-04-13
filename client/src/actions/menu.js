@@ -6,7 +6,7 @@ export async function addFood(roles, food, title, weight) {
     const response = await axios.post(`http://localhost:7777/api/addfood`, {
       roles, food, title, weight
     }, {
-      headers: { Authorization: `Beaerer ${localStorage.getItem('token')}` }
+      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     })
     alert(response.data.message);
   } catch (error) {
@@ -19,7 +19,7 @@ export async function postPossition(roles, possition) {
     const response = await axios.post(`http://localhost:7777/api/possitionMenu`, {
       roles, possition
     }, {
-      headers: { Authorization: `Beaerer ${localStorage.getItem('token')}` }
+      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     })
     if (response.data.message) {
       return alert(response.data.message)
@@ -35,7 +35,7 @@ export async function CreateMenus(roles, emailChief, date, one, two, drink, dess
     const response = await axios.post(`http://localhost:7777/api/create`, {
       roles, emailChief, date, one, two, drink, dessert
     }, {
-      headers: { Authorization: `Beaerer ${localStorage.getItem('token')}` }
+      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     })
     return alert(response.data.message)
   } catch (error) {
@@ -47,16 +47,16 @@ export function GetMenuDay() {
   return dispatch => {
     try {
       const response = axios.get(`http://localhost:7777/api/menuday`, {
-        headers: { Authorization: `Beaerer ${localStorage.getItem('token')}` }
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       })
       const Menu = async () => {
         const datas = await response
-        if (datas.lenght != 0) {
+        if (datas.lenght != undefined) {
           return dispatch(getMenuDay(datas.data.menu))
         }
         else {
           const datas = await response
-          return alert(datas.data.message)
+          if (datas) return alert(datas.data.message)
         }
       }
       Menu()

@@ -507,6 +507,41 @@ form input {
   opacity: 1;
 }
 
+.section-changer {
+  background-color: #e3dcb8;
+}
+
+.block-menu-calendar {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.block-menu-calendar h2 {
+  display: flex;
+  justify-content: center;
+}
+.block-menu-calendar h4 {
+  display: flex;
+  justify-content: center;
+  color: #231942;
+}
+.block-menu-calendar h5 {
+  margin-top: 20px;
+  color: #e3dcb8;
+}
+.block-menu-calendar .block-menu-calendar-info {
+  margin-top: 20px;
+  width: 1000px;
+  height: 260px;
+  outline: 6px dashed #231942;
+  outline-offset: -1px;
+  border: 6px solid #231942;
+  background-color: #231942;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
 .container-list {
   display: flex;
   flex-direction: column;

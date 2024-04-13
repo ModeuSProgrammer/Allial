@@ -114,6 +114,9 @@ class Menus {
   async GetMenuForUser(req, res) {
     try {
       let token = req.headers.authorization.split(' ')[1]
+      if (token.length === undefined) {
+        return res.status(200).json({ message: 'Меню на этот день нет' })
+      }
       token = jwt.decode(token, process.env.secret_key)
       const date = new Date()
       const day = date.getDate()
@@ -142,7 +145,7 @@ class Menus {
       }
     }
     catch (error) {
-      return res.status(400).json({ message: 'Ошибка на сервере' })
+      return res.status(200)
     }
   }
 }
