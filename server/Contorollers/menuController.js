@@ -148,6 +148,37 @@ class Menus {
       return res.status(200)
     }
   }
+
+  async GetMenuDayCalendar(req, res) {
+    try {
+      const DateMenu = req.query.date
+      const haveMenu = await Menu.findOne({ where: { date: DateMenu } })
+      if (haveMenu != undefined) {
+        const data = haveMenu.dataValues
+        const one = await First.findOne({ where: { ID: data.FirstID } })
+        const two = await Second.findOne({ where: { ID: data.SecondID } })
+        const drink = await Drink.findOne({ where: { ID: data.DrinkID } })
+        const dessert = await Dessert.findOne({ where: { ID: data.DessertID } })
+        const menuscalendar = {
+          date: DateMenu,
+          First: one.title,
+          Second: two.title,
+          Dessert: dessert.title,
+          Drink: drink.title
+        }
+        return res.status(200).json(menuscalendar)
+      }
+      else {
+        let menuscalendar = undefined
+        return res.status(200).json(menuscalendar)
+      }
+    }
+    catch (error) {
+      let menuscalendar = undefined
+      return res.status(200).json(menuscalendar)
+    }
+  }
+
 }
 
 module.exports = new Menus

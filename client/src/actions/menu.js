@@ -51,7 +51,7 @@ export function GetMenuDay() {
       })
       const Menu = async () => {
         const datas = await response
-        if (datas.lenght != undefined) {
+        if (datas != undefined) {
           return dispatch(getMenuDay(datas.data.menu))
         }
         else {
@@ -63,5 +63,17 @@ export function GetMenuDay() {
     } catch (error) {
       console.log(error)
     }
+  }
+}
+
+export async function GetMenuDayCalendar(date) {
+  try {
+    const response = await axios.post(`http://localhost:7777/api/menucalendar?date=${date}`, null, {
+      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+    })
+    return response.data
+
+  } catch (error) {
+    console.log(error)
   }
 }

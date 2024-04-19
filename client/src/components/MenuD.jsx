@@ -24,7 +24,6 @@ const MenuD = () => {
   const dessert = useSelector(state => state.menu.menu.Dessert)
   const drink = useSelector(state => state.menu.menu.Drink)
 
-  console.log(menu)
   return (
     <div>
       <Section className="section section-single">
@@ -32,7 +31,7 @@ const MenuD = () => {
           <div className="container-one">
             <div className="container-list">
               <h2>Меню на день</h2>
-              {menu.first != undefined ? (
+              {menu != undefined ? (
                 <div className="list-menu-day">
                   <div>
                     <h5>Первое</h5>

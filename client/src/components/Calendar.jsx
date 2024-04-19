@@ -2,10 +2,16 @@ import React, { useEffect, useState } from "react";
 import Section from "./section";
 import Box from "./box";
 import { useDispatch, useSelector } from "react-redux";
+import { GetMenuDayCalendar } from "../actions/menu";
 
 const Calendar = () => {
   const date = new Date()
-  const [flag, SetFlag] = useState(true) // переключатель блоков
+  //Для отображение дат календаря
+  const y = date.getFullYear()
+  const m = date.getMonth() + 1
+  const countCalendarDate = new Date(y, m, 0).getDate()
+  console.log(countCalendarDate)
+
   //отображение месяца
   const month = date.getMonth()
   const Month = (num) => {
@@ -26,24 +32,18 @@ const Calendar = () => {
     }
   }
   //Для смены меню
-  let menus
   let DateMenu
-  const menu = useSelector(state => state.menu.menu)
-  const first = useSelector(state => state.menu.menu.First)
-  const second = useSelector(state => state.menu.menu.Second)
-  const dessert = useSelector(state => state.menu.menu.Dessert)
-  const drink = useSelector(state => state.menu.menu.Drink)
-
+  const [Menu, SetMenu] = useState('')
+  const [flag, SetFlag] = useState(true) // переключатель блоков
   const MenuCalendar = async (days) => {
-    menus = menu != null ? (menu) : (false)
     let day = days < 10 ? ('0' + days) : (days)
-    console.log(day)
     const mounth = (date.getMonth() + 1) < 10 ? `0${date.getMonth() + 1}` : (date.getMonth() + 1)
     const yaer = date.getFullYear()
-    DateMenu = yaer + '.' + mounth + '.' + day
+    DateMenu = yaer + '-' + mounth + '-' + day
     SetFlag(false)
+    const val = await GetMenuDayCalendar(DateMenu)
+    SetMenu(val)
   }
-  console.log(DateMenu)
   return (
     <div>
       {flag ? (
@@ -53,9 +53,8 @@ const Calendar = () => {
               <div className="calendar-numbers">
                 <h2>{Month(month)}</h2>
                 <div className="calendar-button">
-                  {Array.from({ length: 31 }, (_, index) => (
+                  {Array.from({ length: countCalendarDate }, (_, index) => (
                     <h6 key={index} className="calendar-number" onClick={() => MenuCalendar(index + 1)} >{index + 1}</h6>
-
                   ))}
                 </div>
               </div>
@@ -70,20 +69,20 @@ const Calendar = () => {
                 <h2>Меню</h2>
                 <h4>{DateMenu}</h4>
                 <div className="block-menu-calendar-info">
-                  {menus != false ? (
+                  {Menu != '' ? (
                     <div className="list-menu-day">
                       <div>
                         <h5>Первое</h5>
                         <h5>Второе</h5>
-                        <h5>Напиток</h5>
                         <h5>Десерт</h5>
+                        <h5>Напиток</h5>
                       </div>
                       <div className="list-menu-value">
-                        <h5>{first}</h5>
-                        <h5>{second}</h5>
-                        <h5>{dessert}</h5>
-                        <h5>{drink}</h5>
-
+                        <h5>{console.log(Menu)}</h5>
+                        <h5>{Menu.First}</h5>
+                        <h5>{Menu.Second}</h5>
+                        <h5>{Menu.Dessert}</h5>
+                        <h5>{Menu.Drink}</h5>
                       </div>
                     </div>
                   ) : (
@@ -92,7 +91,7 @@ const Calendar = () => {
                     </div>
                   )}
                 </div>
-                <button className="button" onClick={() => SetFlag(true)}>Назад</button>
+                <button className="button" onClick={() => { SetFlag(true); SetMenu('') }}>Назад</button>
               </div>
             </Box>
           </Section>

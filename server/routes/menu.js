@@ -6,6 +6,8 @@ const AuthMiddleware = require('../middleware/authUsers')
 
 router.get('/menuday', AuthMiddleware.VerifUser, menuController.GetMenuForUser)
 
+router.post('/menucalendar', AuthMiddleware.VerifUser, menuController.GetMenuDayCalendar)
+
 router.post('/chief', AuthMiddleware.VerifUser,)
 router.post('/addfood', AuthMiddleware.VerifUser, menuController.AddFood)
 router.post('/possitionMenu', AuthMiddleware.VerifUser, menuController.postPossitionMenu)
