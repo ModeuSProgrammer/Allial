@@ -10,7 +10,6 @@ const Calendar = () => {
   const y = date.getFullYear()
   const m = date.getMonth() + 1
   const countCalendarDate = new Date(y, m, 0).getDate()
-  console.log(countCalendarDate)
 
   //отображение месяца
   const month = date.getMonth()

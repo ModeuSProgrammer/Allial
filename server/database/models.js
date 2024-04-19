@@ -65,7 +65,7 @@ const Drink = sequelize.define('Drink', {
 const Comment = sequelize.define('Comment', {
   ID: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   text: { type: DataTypes.STRING },
-  date: { type: DataTypes.DATE, },
+  date: { type: DataTypes.DATEONLY, },
 },
   {
     timestamps: false

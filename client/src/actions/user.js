@@ -62,3 +62,16 @@ export async function DeleteUser(email) {
     alert('Ошибка аутентификации');
   }
 }
+
+export async function SendCommentU(date, text) {
+  try {
+    const response = await axios.post(`http://localhost:7777/api/sendCom`, { date, text }, {
+      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+    })
+    alert(response.data.message)
+  }
+  catch (error) {
+    console.error(error);
+    alert('Ошибка Отправки');
+  }
+}

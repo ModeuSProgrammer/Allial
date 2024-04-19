@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
-const { User } = require('../database/models')
+const { User, Menu, Comment } = require('../database/models')
 
 // token for log in system and cheking
 const generateJWT = (ID, email, RoleID) => {
@@ -82,5 +82,25 @@ class UserController {
       return res.status(401).json({ message: 'Ошибка удаления' })
     }
   }
+  async SendCommentUser(req, res) {
+    try {
+      const { date, text } = req.body
+      const dateMenuCheck = await Menu.findOne({ where: { date: date } })
+      if (dateMenuCheck != undefined) {
+        const MID = dateMenuCheck.ID
+        const comment = await Comment.create({ text: text, date: date, MenuID: MID })
+        return res.status(200).json({ message: 'Спасибо за ваш отзыв!' })
+
+      }
+      if (dateMenuCheck == undefined) {
+        return res.status(200).json({ message: 'Нельзя оставить отзыв на этот день!' })
+      }
+    }
+    catch (err) {
+      console.log(err)
+      return res.status(401).json({ message: 'Ошибка отправки' })
+    }
+  }
+
 }
 module.exports = new UserController()
