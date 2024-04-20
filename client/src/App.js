@@ -24,13 +24,15 @@ function App() {
 
   useEffect(() => {
     if (!isAuth & token) {
-      dispatch(checkAuth())
+      if (token) {
+        dispatch(checkAuth())
+      }
     }
   }, [dispatch, isAuth])
 
   useEffect(() => {
     const updateUserData = () => {
-      if (token) {
+      if (token != undefined) {
         let decodedToken = jwtDecode(token);
         let user = {
           ID: decodedToken.ID,

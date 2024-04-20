@@ -31,7 +31,7 @@ const MenuD = () => {
           <div className="container-one">
             <div className="container-list">
               <h2>Меню на день</h2>
-              {menu != undefined ? (
+              {menu.first != undefined ? (
                 <div className="list-menu-day">
                   <div>
                     <h5>Первое</h5>

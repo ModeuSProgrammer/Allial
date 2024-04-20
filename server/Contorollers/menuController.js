@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken')
-const { User, Menu, First, Second, Dessert, Drink } = require("../database/models");
+const { User, Menu, First, Second, Dessert, Drink, Comment } = require("../database/models");
+const { where } = require('sequelize');
 
 class Menus {
 
@@ -178,6 +179,31 @@ class Menus {
       return res.status(200).json(menuscalendar)
     }
   }
+
+  async DeleteMenu(req, res) {
+    try {
+      if (req.query.date === 'undefined') {
+        return res.status(200).json({ message: 'На данный день нет меню' })
+      }
+      const dateDelString = req.query.date
+      const dateDel = new Date(dateDelString);
+      const menu = await Menu.findOne({ where: { date: dateDel } })
+      if (menu.ID != 0) {
+        const comDel = await Comment.findAll({ where: { MenuID: menu.ID } })
+        console.log(comDel)
+        await Comment.destroy({ where: { MenuID: menu.ID } });
+        await menu.destroy();
+        return res.status(200).json({ message: `Меню на ${dateDelString} было удалено` })
+      }
+      else {
+        return res.status(200).json({ message: `Меню на ${dateDelString} не найдено` });
+      }
+    }
+    catch (err) {
+      return res.status(200).json({ message: 'Ошибка удаления на сервера' })
+    }
+  }
+
 
 }
 

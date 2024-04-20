@@ -33,21 +33,23 @@ class UserController {
   }
   // log in system
   async Auth(req, res) {
-    const { email, password } = req.body
-    const user = await User.findOne({ where: { email: email } })
-    const VerifPass = await bcrypt.compareSync(password, user.password)
-    if (VerifPass === true) {
-      const token = generateJWT(user.ID, user.email, user.RoleID)
-      return res.status(200).json({
-        token, user: {
-          ID: user.ID,
-          email: user.email,
-          RoleID: user.RoleID
-        },
-        message: 'Вы авторизированы'
-      });
+    try {
+      const { email, password } = req.body
+      const user = await User.findOne({ where: { email: email } })
+      const VerifPass = bcrypt.compareSync(password, user.password)
+      if (VerifPass === true) {
+        const token = generateJWT(user.ID, user.email, user.RoleID)
+        return res.status(200).json({
+          token, user: {
+            ID: user.ID,
+            email: user.email,
+            RoleID: user.RoleID
+          },
+          message: 'Вы авторизированы'
+        });
+      }
     }
-    else {
+    catch (e) {
       return res.status(200).json({ message: 'Ошибка почты или пароля' });
     }
   }
@@ -88,7 +90,7 @@ class UserController {
       const dateMenuCheck = await Menu.findOne({ where: { date: date } })
       if (dateMenuCheck != undefined) {
         const MID = dateMenuCheck.ID
-        const comment = await Comment.create({ text: text, date: date, MenuID: MID })
+        await Comment.create({ text: text, date: date, MenuID: MID })
         return res.status(200).json({ message: 'Спасибо за ваш отзыв!' })
 
       }
@@ -99,6 +101,19 @@ class UserController {
     catch (err) {
       console.log(err)
       return res.status(401).json({ message: 'Ошибка отправки' })
+    }
+  }
+
+  async ShowComments(req, res) {
+    try {
+      const stringDate = req.body.date
+      const normalDate = new Date(stringDate)
+      const comments = await Comment.findAll({ where: { date: normalDate }, attributes: ['ID', 'text'] })
+      return res.status(200).json(comments)
+    }
+    catch (err) {
+      console.log(err)
+      return res.status(401).json({ message: 'Ошибка на сервере' })
     }
   }
 

@@ -15,7 +15,6 @@ export async function addFood(roles, food, title, weight) {
 }
 export async function postPossition(roles, possition) {
   try {
-    console.log(roles, possition)
     const response = await axios.post(`http://localhost:7777/api/possitionMenu`, {
       roles, possition
     }, {
@@ -74,6 +73,17 @@ export async function GetMenuDayCalendar(date) {
     return response.data
 
   } catch (error) {
+    console.log(error)
+  }
+}
+export async function DeleteMenuDay(date) {
+  try {
+    const response = await axios.delete(`http://localhost:7777/api/delMenu?date=${date}`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+    })
+    alert(response.data.message)
+  }
+  catch (error) {
     console.log(error)
   }
 }

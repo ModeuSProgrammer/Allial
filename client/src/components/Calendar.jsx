@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Section from "./section";
 import Box from "./box";
 import { useDispatch, useSelector } from "react-redux";
-import { GetMenuDayCalendar } from "../actions/menu";
+import { DeleteMenuDay, GetMenuDayCalendar } from "../actions/menu";
 
 const Calendar = () => {
   const date = new Date()
@@ -43,6 +43,9 @@ const Calendar = () => {
     const val = await GetMenuDayCalendar(DateMenu)
     SetMenu(val)
   }
+
+  // для шефа
+  const roles = useSelector(state => state.user.currentUser.RoleID)
   return (
     <div>
       {flag ? (
@@ -77,13 +80,13 @@ const Calendar = () => {
                         <h5>Напиток</h5>
                       </div>
                       <div className="list-menu-value">
-                        <h5>{console.log(Menu)}</h5>
                         <h5>{Menu.First}</h5>
                         <h5>{Menu.Second}</h5>
                         <h5>{Menu.Dessert}</h5>
                         <h5>{Menu.Drink}</h5>
                       </div>
                     </div>
+
                   ) : (
                     <div className="list-menu-day">
                       <h5> Меню на данный день нет</h5>
@@ -91,6 +94,9 @@ const Calendar = () => {
                   )}
                 </div>
                 <button className="button" onClick={() => { SetFlag(true); SetMenu('') }}>Назад</button>
+                {(roles === 2 ? (
+                  <button className="button" onClick={() => { DeleteMenuDay(Menu.date) }}>Удалить</button>
+                ) : (''))}
               </div>
             </Box>
           </Section>

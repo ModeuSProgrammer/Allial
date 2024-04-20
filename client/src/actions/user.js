@@ -9,8 +9,13 @@ export function login(email, password) {
         email,
         password
       })
-      dispatch(setUser(response.data.user))
-      localStorage.setItem('token', response.data.token)
+      if (response.data.token) {
+        dispatch(setUser(response.data.user))
+        localStorage.setItem('token', response.data.token)
+      }
+      else {
+        localStorage.removeItem('token')
+      }
     } catch (error) {
       alert(error.response.data.message)
     }
@@ -73,5 +78,17 @@ export async function SendCommentU(date, text) {
   catch (error) {
     console.error(error);
     alert('Ошибка Отправки');
+  }
+}
+
+export async function ShowComment(date) {
+  try {
+    const response = await axios.post(`http://localhost:7777/api/showCom`, { date }, {
+      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+    })
+    return (response.data)
+  }
+  catch (error) {
+    console.error(error);
   }
 }
