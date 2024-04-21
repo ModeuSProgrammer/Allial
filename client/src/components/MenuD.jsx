@@ -18,7 +18,6 @@ const MenuD = () => {
   const yaer = date.getFullYear()
   const DateMenu = day + '.' + mounth + '.' + yaer
 
-  const menu = useSelector(state => state.menu.menu)
   const first = useSelector(state => state.menu.menu.First)
   const second = useSelector(state => state.menu.menu.Second)
   const dessert = useSelector(state => state.menu.menu.Dessert)
@@ -30,45 +29,24 @@ const MenuD = () => {
           <div className="container-one">
             <div className="container-list">
               <h2>Меню на день</h2>
-              {menu != undefined ? (
-                <div className="list-menu-day">
-                  <div>
-                    <h5>Первое</h5>
-                    <h5>Второе</h5>
-                    <h5>Напиток</h5>
-                    <h5>Десерт</h5>
-                    <br />
-                    <h5>Дата</h5>
-                  </div>
-                  <div className="list-menu-value">
-                    <h5>{first}</h5>
-                    <h5>{second}</h5>
-                    <h5>{dessert}</h5>
-                    <h5>{drink}</h5>
-                    <br />
-                    <h5>{DateMenu}</h5>
-                  </div>
+              <div className="list-menu-day">
+                <div>
+                  <h5>Первое</h5>
+                  <h5>Второе</h5>
+                  <h5>Напиток</h5>
+                  <h5>Десерт</h5>
+                  <br />
+                  <h5>Дата</h5>
                 </div>
-              ) : (
-                <div className="list-menu-day">
-                  <div>
-                    <h5>Первое</h5>
-                    <h5>Второе</h5>
-                    <h5>Напиток</h5>
-                    <h5>Десерт</h5>
-                    <br />
-                    <h5>Дата</h5>
-                  </div>
-                  <div className="list-menu-value">
-                    <h5>-</h5>
-                    <h5>-</h5>
-                    <h5>-</h5>
-                    <h5>-</h5>
-                    <br />
-                    <h5>{DateMenu}</h5>
-                  </div>
+                <div className="list-menu-value">
+                  <h5>{first}</h5>
+                  <h5>{second}</h5>
+                  <h5>{dessert}</h5>
+                  <h5>{drink}</h5>
+                  <br />
+                  <h5>{DateMenu}</h5>
                 </div>
-              )}
+              </div>
             </div>
           </div>
         </Box>

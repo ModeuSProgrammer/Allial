@@ -50,13 +50,7 @@ export function GetMenuDay() {
       })
       const Menu = async () => {
         const datas = await response
-        if (datas != undefined) {
-          return dispatch(getMenuDay(datas.data.menu))
-        }
-        else {
-          const datas = await response
-          if (datas) return alert(datas.data.message)
-        }
+        return dispatch(getMenuDay(datas.data.menu))
       }
       Menu()
     } catch (error) {
@@ -64,6 +58,8 @@ export function GetMenuDay() {
     }
   }
 }
+
+
 
 export async function GetMenuDayCalendar(date) {
   try {

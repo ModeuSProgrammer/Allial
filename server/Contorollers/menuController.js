@@ -125,7 +125,7 @@ class Menus {
       const yaer = date.getFullYear()
       const DateMenu = yaer + '-' + mounth + '-' + day
       const haveMenu = await Menu.findOne({ where: { date: DateMenu } })
-      if (haveMenu.length != 0) {
+      if (haveMenu != null) {
         const data = haveMenu.dataValues
         await User.update({ MenuID: data.ID }, { where: { ID: token.ID } })
         const one = await First.findOne({ where: { ID: data.FirstID } })
@@ -142,7 +142,14 @@ class Menus {
         return res.status(200).json({ menu })
       }
       else {
-        return res.status(200).json({ message: 'Меню на этот день нет' })
+        const menu = {
+          date: DateMenu,
+          First: '-',
+          Second: '-',
+          Dessert: '-',
+          Drink: '-'
+        }
+        return res.status(200).json({ menu })
       }
     }
     catch (error) {
