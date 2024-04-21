@@ -84,3 +84,13 @@
     margin-top: 50px;
   }
 }
+
+.comment-list::-webkit-scrollbar-thumb {
+  background: $scroll;
+}
+.comment-list::-webkit-scrollbar-track {
+  background: white;
+}
+.comment-list::-webkit-scrollbar {
+  width: 7px;
+}

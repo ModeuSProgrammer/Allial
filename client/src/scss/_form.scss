@@ -82,3 +82,25 @@ form {
     }
   }
 }
+form {
+  .button:hover {
+    transition: 0.5s;
+    background-color: $hover-1;
+    color: $hover-2;
+  }
+  .button:active {
+    transition: 0.5s;
+    background-color: $hover-2;
+    color: $hover-1;
+  }
+}
+.button:hover {
+  transition: 0.5s;
+  background-color: $hover-1;
+  color: $hover-2;
+}
+.button:active {
+  transition: 0.5s;
+  background-color: $hover-2;
+  color: $hover-1;
+}

@@ -1,21 +1,21 @@
 // NOT AUTH
-import Main from './pages/Main';
-import LogIn from './pages/LogIn';
+import Main from './pages/Main'
+import LogIn from './pages/LogIn'
 // AUTH
-import MenuDay from './pages/MenuDay';
-import Admin from './pages/Admin';
-import AddUsers from './pages/AddUsers';
-import AddFood from './pages/AddFood';
-import Chief from './pages/Chief';
-import User from './pages/User';
+import MenuDay from './pages/MenuDay'
+import Admin from './pages/Admin'
+import AddUsers from './pages/AddUsers'
+import AddFood from './pages/AddFood'
+import Chief from './pages/Chief'
+import User from './pages/User'
 
-import React, { useEffect } from 'react';
-import { jwtDecode } from 'jwt-decode';
-import { Route, Routes, BrowserRouter, Navigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect } from 'react'
+import { jwtDecode } from 'jwt-decode'
+import { Route, Routes, BrowserRouter, Navigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { checkAuth } from './actions/user'
-import { setUser } from './store/userReducer';
+import { setUser } from './store/userReducer'
 
 function App() {
   const dispatch = useDispatch()
@@ -33,17 +33,17 @@ function App() {
   useEffect(() => {
     const updateUserData = () => {
       if (token != undefined) {
-        let decodedToken = jwtDecode(token);
+        let decodedToken = jwtDecode(token)
         let user = {
           ID: decodedToken.ID,
           email: decodedToken.email,
           RoleID: decodedToken.RoleID,
-        };
-        dispatch(setUser(user));
+        }
+        dispatch(setUser(user))
       }
-    };
-    updateUserData();
-  }, [token, dispatch]);
+    }
+    updateUserData()
+  }, [token, dispatch])
 
   const RoleID = useSelector(state => state.user.currentUser.RoleID)
 
@@ -64,4 +64,4 @@ function App() {
   );
 }
 
-export default App;
+export default App

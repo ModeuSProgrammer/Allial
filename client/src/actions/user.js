@@ -36,7 +36,7 @@ export function checkAuth() {
     }
     catch (error) {
       console.error(error)
-      alert(error.response.data.message);
+      alert(error.response.data.message)
       localStorage.removeItem('token')
     }
   }
@@ -49,10 +49,10 @@ export async function RegistUser(RoleID, roles, email, password) {
       { RoleID, roles, email, password },
       { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } }
     )
-    alert(response.data.message);
+    alert(response.data.message)
   } catch (error) {
-    console.error(error);
-    alert('Ошибка создания пользователя');
+    console.error(error)
+    alert('Ошибка создания пользователя')
   }
 }
 
@@ -61,10 +61,10 @@ export async function DeleteUser(email) {
     const response = await axios.delete(`http://localhost:7777/api/adduser?email=${email}`, {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     })
-    alert(response.data.message);
+    alert(response.data.message)
   } catch (error) {
-    console.error(error);
-    alert('Ошибка аутентификации');
+    console.error(error)
+    alert('Ошибка аутентификации')
   }
 }
 
@@ -76,19 +76,41 @@ export async function SendCommentU(date, text) {
     alert(response.data.message)
   }
   catch (error) {
-    console.error(error);
-    alert('Ошибка Отправки');
+    console.error(error)
+    alert('Ошибка Отправки')
   }
 }
 
 export async function ShowComment(date) {
   try {
-    const response = await axios.post(`http://localhost:7777/api/showCom`, { date }, {
-      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-    })
-    return (response.data)
+    const token = localStorage.getItem('token') || 0
+    if (token) {
+      const response = await axios.post(`http://localhost:7777/api/showCom`, { date }, {
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+      })
+      return (response.data)
+    }
   }
   catch (error) {
-    console.error(error);
+    console.error(error)
+  }
+}
+
+export async function DelComment(roleID, IDcomment) {
+  try {
+    if (roleID == 3) {
+      const response = await axios.delete(`http://localhost:7777/api/delCom?IDcomment=${IDcomment}`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`
+        }
+      })
+      alert(response.data.message)
+    }
+    else {
+      alert('Ошибка роли')
+    }
+  }
+  catch (error) {
+    console.error(error)
   }
 }

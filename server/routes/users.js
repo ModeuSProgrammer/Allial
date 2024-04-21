@@ -13,6 +13,6 @@ router.post('/showCom', AuthMiddleware.VerifUser, UserController.ShowComments)
 router.get('/check', AuthMiddleware.VerifUser, UserController.Check)
 
 router.delete('/adduser', AuthMiddleware.VerifUser, UserController.Delete)
-
+router.delete('/delCom', AuthMiddleware.VerifUser, UserController.DeleteComment)
 
 module.exports = router 

@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { getMenuDay } from '../store/menuReducer';
+import axios from 'axios'
+import { getMenuDay } from '../store/menuReducer'
 
 export async function addFood(roles, food, title, weight) {
   try {
@@ -8,7 +8,7 @@ export async function addFood(roles, food, title, weight) {
     }, {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     })
-    alert(response.data.message);
+    alert(response.data.message)
   } catch (error) {
     alert(error.response.data.message)
   }

@@ -327,6 +327,29 @@ form input {
   margin: 15px auto;
 }
 
+form .button:hover {
+  transition: 0.5s;
+  background-color: #e3dcb8;
+  color: #231942;
+}
+form .button:active {
+  transition: 0.5s;
+  background-color: #231942;
+  color: #e3dcb8;
+}
+
+.button:hover {
+  transition: 0.5s;
+  background-color: #e3dcb8;
+  color: #231942;
+}
+
+.button:active {
+  transition: 0.5s;
+  background-color: #231942;
+  color: #e3dcb8;
+}
+
 .header-nav {
   display: flex;
   align-items: center;
@@ -377,6 +400,22 @@ form input {
   justify-content: space-between;
 }
 .footer-nav .navigation li a {
+  color: #231942;
+}
+
+.header-nav .navigation li a:hover {
+  transition: 0.2s;
+  color: #e3dcb8;
+}
+.header-nav .navigation li a:active {
+  color: #e06dac;
+}
+
+.footer-nav .navigation li a:hover {
+  transition: 0.2s;
+  color: #e06dac;
+}
+.footer-nav .navigation li a:active {
   color: #231942;
 }
 
@@ -462,6 +501,18 @@ form input {
 .comment-form .button {
   font-size: 24px;
   margin-top: 50px;
+}
+
+.comment-list::-webkit-scrollbar-thumb {
+  background: #e3dcb8;
+}
+
+.comment-list::-webkit-scrollbar-track {
+  background: white;
+}
+
+.comment-list::-webkit-scrollbar {
+  width: 7px;
 }
 
 .calendar-numbers {

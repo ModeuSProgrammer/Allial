@@ -45,3 +45,21 @@
         }
     }
 }
+.header-nav {
+    .navigation li a:hover {
+        transition: 0.2s;
+        color: $hover-1;
+    }
+    .navigation li a:active {
+        color: $hover-3;
+    }
+}
+.footer-nav {
+    .navigation li a:hover {
+        transition: 0.2s;
+        color: $hover-3;
+    }
+    .navigation li a:active {
+        color: $hover-2;
+    }
+}

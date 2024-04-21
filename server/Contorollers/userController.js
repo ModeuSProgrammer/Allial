@@ -116,6 +116,25 @@ class UserController {
       return res.status(401).json({ message: 'Ошибка на сервере' })
     }
   }
+  async DeleteComment(req, res) {
+    try {
+      const IDcomment = req.query.IDcomment
+      const delCom = await Comment.findByPk(IDcomment)
+      await delCom.destroy()
+      await delCom.save()
+      const checking = await Comment.findByPk(IDcomment)
+      console.log(checking)
+      if (checking === null)
+        return res.status(200).json({ message: 'Комментарий был удален' })
+      else {
+        return res.status(200).json({ message: 'Ошибка удаления комментария' })
+      }
+    }
+    catch (err) {
+      console.log(err)
+      return res.status(401).json({ message: 'Ошибка на сервере' })
+    }
+  }
 
 }
 module.exports = new UserController()

@@ -21,10 +21,10 @@ const CommentChief = () => {
   }, [comments])
 
   setTimeout(async () => {
-    const fetchedComments = await ShowComment(DateComment)
+    const fetchedComments = await ShowComment(DateComment) || 0
     SetComments(fetchedComments)
     if (fetchedComments.length !== 0) {
-      SetCommentsFlag(true);
+      SetCommentsFlag(true)
     }
   }, 1000)
 
