@@ -1,10 +1,10 @@
-import React from "react";
-import Section from "./section";
-import Box from "./box";
+import React from "react"
+import Section from "./section"
+import Box from "./box"
 
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { GetMenuDay } from "../actions/menu";
+import { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { GetMenuDay } from "../actions/menu"
 
 const MenuD = () => {
   const dispatch = useDispatch()

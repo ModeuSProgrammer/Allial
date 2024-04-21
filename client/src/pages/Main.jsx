@@ -1,8 +1,8 @@
-import Image from "../components/Image";
-import Section from "../components/section";
-import Box from "../components/box";
+import Image from "../components/Image"
+import Section from "../components/section"
+import Box from "../components/box"
 
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
 const Main = () => {
   return (
@@ -61,7 +61,7 @@ const Main = () => {
       </footer >
 
     </div >
-  );
+  )
 }
 
-export default Main;
+export default Main

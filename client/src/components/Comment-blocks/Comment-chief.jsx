@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import Section from "../section";
-import Box from "../box";
-import { ShowComment } from "../../actions/user";
+import React, { useEffect, useState } from "react"
+import Section from "../section"
+import Box from "../box"
+import { ShowComment } from "../../actions/user"
 
 const CommentChief = () => {
   const date = new Date()

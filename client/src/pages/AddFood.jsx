@@ -1,13 +1,13 @@
-import Image from "../components/Image";
-import Section from "../components/section";
-import Box from "../components/box";
+import Image from "../components/Image"
+import Section from "../components/section"
+import Box from "../components/box"
 
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 
 import { addFood } from "../actions/menu"
-import { logout } from "../store/userReducer";
-import { useState } from "react";
+import { logout } from "../store/userReducer"
+import { useState } from "react"
 
 const AddFood = () => {
   const dispatch = useDispatch()
@@ -65,7 +65,7 @@ const AddFood = () => {
         </div>
       </footer >
     </div>
-  );
+  )
 }
 
-export default AddFood;
+export default AddFood

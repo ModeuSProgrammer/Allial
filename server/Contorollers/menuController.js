@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
-const { User, Menu, First, Second, Dessert, Drink, Comment } = require("../database/models");
-const { where } = require('sequelize');
+const { User, Menu, First, Second, Dessert, Drink, Comment } = require("../database/models")
+const { where } = require('sequelize')
 
 class Menus {
 
@@ -61,19 +61,19 @@ class Menus {
     switch (nubPoss) {
       case 1:
         possitionMenu = await First.findAll({ attributes: ['title'] })
-        positionNames = possitionMenu.map(position => position.title);
+        positionNames = possitionMenu.map(position => position.title)
         return res.status(200).json(positionNames)
       case 2:
         possitionMenu = await Second.findAll({ attributes: ['title'] })
-        positionNames = possitionMenu.map(position => position.title);
+        positionNames = possitionMenu.map(position => position.title)
         return res.status(200).json(positionNames)
       case 3:
         possitionMenu = await Drink.findAll({ attributes: ['title'] })
-        positionNames = possitionMenu.map(position => position.title);
+        positionNames = possitionMenu.map(position => position.title)
         return res.status(200).json(positionNames)
       case 4:
         possitionMenu = await Dessert.findAll({ attributes: ['title'] })
-        positionNames = possitionMenu.map(position => position.title);
+        positionNames = possitionMenu.map(position => position.title)
         return res.status(200).json(positionNames)
       default: return res.status(400).json({ message: 'Ошибка получения позиций меню' })
     }
@@ -186,17 +186,17 @@ class Menus {
         return res.status(200).json({ message: 'На данный день нет меню' })
       }
       const dateDelString = req.query.date
-      const dateDel = new Date(dateDelString);
+      const dateDel = new Date(dateDelString)
       const menu = await Menu.findOne({ where: { date: dateDel } })
       if (menu.ID != 0) {
         const comDel = await Comment.findAll({ where: { MenuID: menu.ID } })
         console.log(comDel)
-        await Comment.destroy({ where: { MenuID: menu.ID } });
-        await menu.destroy();
+        await Comment.destroy({ where: { MenuID: menu.ID } })
+        await menu.destroy()
         return res.status(200).json({ message: `Меню на ${dateDelString} было удалено` })
       }
       else {
-        return res.status(200).json({ message: `Меню на ${dateDelString} не найдено` });
+        return res.status(200).json({ message: `Меню на ${dateDelString} не найдено` })
       }
     }
     catch (err) {

@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
-
+import React, { useEffect, useState } from "react"
 import Section from "./section"
 import Box from "./box"
 
-import { postPossition, CreateMenus } from "../actions/menu";
-import { useDispatch, useSelector } from "react-redux";
+import { postPossition, CreateMenus } from "../actions/menu"
+import { useDispatch, useSelector } from "react-redux"
 
 const CreateMenu = () => {
   const dispatch = useDispatch()
@@ -25,11 +24,12 @@ const CreateMenu = () => {
   const [possitionMenu4, setPossitionMenu4] = useState([])
   // для получения списка
   useEffect(() => {
-    postPossition(UserRoleID, 1).then(setPossitionMenu1).catch(console.error);
-    postPossition(UserRoleID, 2).then(setPossitionMenu2).catch(console.error);
-    postPossition(UserRoleID, 3).then(setPossitionMenu3).catch(console.error);
-    postPossition(UserRoleID, 4).then(setPossitionMenu4).catch(console.error);
-  }, []);
+    postPossition(UserRoleID, 1).then(setPossitionMenu1).catch(console.error)
+    postPossition(UserRoleID, 2).then(setPossitionMenu2).catch(console.error)
+    postPossition(UserRoleID, 3).then(setPossitionMenu3).catch(console.error)
+    postPossition(UserRoleID, 4).then(setPossitionMenu4).catch(console.error)
+  }, [])
+
   // для изменения списка
   const handleSelectChange1 = (e) => { SetList1(e.target.value) }
   const handleSelectChange2 = (e) => { SetList2(e.target.value) }

@@ -1,14 +1,13 @@
-import Image from "../components/Image";
-import Section from "../components/section";
-import Box from "../components/box";
-import Button from "../components/button";
+import Image from "../components/Image"
+import Section from "../components/section"
+import Box from "../components/box"
 
-import { Link } from "react-router-dom";
+import { useState } from "react"
+import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
-import { RegistUser, DeleteUser } from "../actions/user";
-import { useState } from "react";
 
-import { logout } from "../store/userReducer";
+import { RegistUser, DeleteUser } from "../actions/user"
+import { logout } from "../store/userReducer"
 
 const AddUsers = () => {
   const dispatch = useDispatch()

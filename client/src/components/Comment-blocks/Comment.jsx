@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import Section from "../section";
-import Box from "../box";
-import { DelComment, ShowComment } from "../../actions/user";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react"
+import Section from "../section"
+import Box from "../box"
+import { DelComment, ShowComment } from "../../actions/user"
+import { useSelector } from "react-redux"
 
 const Comment = () => {
   const date = new Date()

@@ -1,8 +1,8 @@
-import { configureStore } from '@reduxjs/toolkit';
-import thunk from 'redux-thunk';
+import { configureStore } from '@reduxjs/toolkit'
+import thunk from 'redux-thunk'
 
-import userReducer from './userReducer';
-import menuReducer from './menuReducer';
+import userReducer from './userReducer'
+import menuReducer from './menuReducer'
 
 const store = configureStore({
   reducer: {
@@ -11,6 +11,6 @@ const store = configureStore({
   },
   middleware: [thunk],
   devTools: process.env.NODE_ENV !== 'production'
-});
+})
 
 export default store 

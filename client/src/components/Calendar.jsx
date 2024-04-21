@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import Section from "./section";
-import Box from "./box";
-import { useDispatch, useSelector } from "react-redux";
-import { DeleteMenuDay, GetMenuDayCalendar } from "../actions/menu";
+import React, { useEffect, useState } from "react"
+import Section from "./section"
+import Box from "./box"
+import { useDispatch, useSelector } from "react-redux"
+import { DeleteMenuDay, GetMenuDayCalendar } from "../actions/menu"
 
 const Calendar = () => {
   const date = new Date()

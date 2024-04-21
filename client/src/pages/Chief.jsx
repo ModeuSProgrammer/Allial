@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react"
 import { useDispatch, useSelector } from "react-redux"
 
-import Image from "../components/Image";
-import CreateMenu from "../components/create-menu";
-import Calendar from "../components/Calendar";
-import CommentChief from "../components/Comment-blocks/Comment-chief";
+import Image from "../components/Image"
+import CreateMenu from "../components/create-menu"
+import Calendar from "../components/Calendar"
+import CommentChief from "../components/Comment-blocks/Comment-chief"
 
-import { Link } from "react-router-dom";
-import { logout } from "../store/userReducer";
+import { Link } from "react-router-dom"
+import { logout } from "../store/userReducer"
 
 const Cheif = () => {
   const dispatch = useDispatch()
@@ -47,7 +47,7 @@ const Cheif = () => {
       </footer >
 
     </div >
-  );
+  )
 }
 
-export default Cheif;
+export default Cheif

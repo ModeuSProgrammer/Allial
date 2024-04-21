@@ -37,7 +37,7 @@ class defaultData {
   async createRole() {
     const searchRoles = await Role.findAll()
     if (searchRoles != 0) {
-      return console.log('Roles add');
+      return console.log('Roles add')
     }
     else {
       // Цикл что с элементом роль добавляет по записи из массива 

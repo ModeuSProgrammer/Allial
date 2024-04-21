@@ -1,12 +1,11 @@
 
-import Image from "../components/Image";
-import Calendar from "../components/Calendar";
-import CommentUser from "../components/Comment-blocks/Comment-user";
+import Image from "../components/Image"
+import Calendar from "../components/Calendar"
+import CommentUser from "../components/Comment-blocks/Comment-user"
 
-import { Link } from 'react-router-dom';
-
+import { Link } from 'react-router-dom'
 import { useDispatch } from "react-redux"
-import { logout } from "../store/userReducer";
+import { logout } from "../store/userReducer"
 
 
 const User = () => {
@@ -42,7 +41,7 @@ const User = () => {
       </footer >
 
     </div >
-  );
+  )
 }
 
-export default User;
+export default User

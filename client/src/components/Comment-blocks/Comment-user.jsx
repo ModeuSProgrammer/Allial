@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import Section from "../section";
-import Box from "../box";
-import { SendCommentU } from "../../actions/user";
+import React, { useState } from "react"
+import Section from "../section"
+import Box from "../box"
+import { SendCommentU } from "../../actions/user"
 
 const CommentUser = () => {
   const [dateComment, SetDataComment] = useState('')

@@ -1,11 +1,9 @@
-import Image from "../components/Image";
-import MenuD from "../components/MenuD";
+import Image from "../components/Image"
+import MenuD from "../components/MenuD"
 
-import { Link } from "react-router-dom";
-import { logout } from "../store/userReducer";
-
+import { Link } from "react-router-dom"
+import { logout } from "../store/userReducer"
 import { useDispatch, useSelector } from "react-redux"
-import { useEffect } from "react";
 
 const MenuDay = () => {
   const dispatch = useDispatch()
@@ -77,7 +75,7 @@ const MenuDay = () => {
         </div>
       </footer >
     </div >
-  );
+  )
 }
 
-export default MenuDay;
+export default MenuDay

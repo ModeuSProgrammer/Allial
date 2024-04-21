@@ -1,10 +1,9 @@
-import Image from "../components/Image";
-import Calendar from "../components/Calendar";
-import Comment from "../components/Comment-blocks/Comment";
+import Image from "../components/Image"
+import Calendar from "../components/Calendar"
+import Comment from "../components/Comment-blocks/Comment"
 
-import { Link } from "react-router-dom";
-import { logout } from "../store/userReducer";
-
+import { Link } from "react-router-dom"
+import { logout } from "../store/userReducer"
 import { useDispatch } from "react-redux"
 
 const Admin = () => {
@@ -45,7 +44,7 @@ const Admin = () => {
       </footer >
 
     </div >
-  );
+  )
 }
 
-export default Admin;
+export default Admin

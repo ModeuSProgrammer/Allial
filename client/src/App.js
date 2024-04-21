@@ -61,7 +61,7 @@ function App() {
         <Route path="/addfood" element={isAuth ? (RoleID === 3 ? <AddFood /> : <Navigate to="/menuday" />) : (<Navigate to="/auth" />)} />
       </Routes>
     </BrowserRouter>
-  );
+  )
 }
 
 export default App
