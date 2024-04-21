@@ -123,7 +123,6 @@ class UserController {
       await delCom.destroy()
       await delCom.save()
       const checking = await Comment.findByPk(IDcomment)
-      console.log(checking)
       if (checking === null)
         return res.status(200).json({ message: 'Комментарий был удален' })
       else {
