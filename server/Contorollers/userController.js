@@ -36,6 +36,9 @@ class UserController {
     try {
       const { email, password } = req.body
       const user = await User.findOne({ where: { email: email } })
+      if (user == null) {
+        return res.status(200).json({ message: 'Данного пользователя не существует' });
+      }
       const VerifPass = bcrypt.compareSync(password, user.password)
       if (VerifPass === true) {
         const token = generateJWT(user.ID, user.email, user.RoleID)
@@ -46,6 +49,11 @@ class UserController {
             RoleID: user.RoleID
           },
           message: 'Вы авторизированы'
+        });
+      }
+      else {
+        return res.status(200).json({
+          message: 'Неправильный пароль или почта'
         });
       }
     }

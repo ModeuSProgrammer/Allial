@@ -12,8 +12,10 @@ export function login(email, password) {
       if (response.data.token) {
         dispatch(setUser(response.data.user))
         localStorage.setItem('token', response.data.token)
+        alert(response.data.message)
       }
       else {
+        alert(response.data.message)
         localStorage.removeItem('token')
       }
     } catch (error) {
