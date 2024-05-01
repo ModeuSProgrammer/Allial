@@ -17,18 +17,14 @@ const Comment = () => {
   const roleID = useSelector(state => state.user.currentUser.RoleID)
 
   useEffect(() => {
-    if (!comments || comments.length === 0) {
-      SetCommentsFlag(false)
-    }
-  }, [comments])
+    const intervalId = setInterval(async () => {
+      const fetchedComments = await ShowComment(DateComment) || []
+      SetCommentsFlag(fetchedComments.length !== 0)
+      SetComments(fetchedComments)
+    }, 1000)
 
-  setTimeout(async () => {
-    const fetchedComments = await ShowComment(DateComment) || 0
-    SetComments(fetchedComments)
-    if (fetchedComments.length !== 0) {
-      SetCommentsFlag(true)
-    }
-  }, 1000)
+    return () => clearInterval(intervalId)
+  }, [DateComment])
 
   return (
     <Section className="section section-single">
