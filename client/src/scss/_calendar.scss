@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    color: $color-text-one;
     width: 100%;
     margin-top: 10px;
   }
@@ -27,26 +28,27 @@
     height: 55px;
     border-radius: 100%;
 
-    background-image: linear-gradient(135deg, #e3dcb8 0%, #e0b1cb 100%);
-    box-shadow: 0 20px 30px -6px rgba(#231942, 0.5);
+    background-image: linear-gradient(135deg, #f4f4f4 0%, #241a4273 100%);
+    box-shadow: 0 20px 30px -6px rgba(#241a4273, 0.2);
     outline: none;
     cursor: pointer;
     border: none;
     font-size: 24px;
-    color: #231942;
+    color: #2d2d2d;
   }
 }
 .calendar-number:hover {
-  transform: translateY(3px);
-  box-shadow: none;
+  transform: translateY(0.5px);
+  background-image: linear-gradient(135deg, #2d2d2d 0%, #241a4273 100%);
+  color: #f4f4f4;
+  transform: background-image 2s;
+  box-shadow: 0 10px 30px 6px rgba(#241a4273, 0.2);
+  transition: color 1.5s;
 }
 .calendar-number:hover {
   opacity: 1;
 }
 
-.section-changer {
-  background-color: $color-block-yellow;
-}
 .block-menu-calendar {
   height: 100%;
   display: flex;
@@ -54,31 +56,33 @@
   align-items: center;
   h2 {
     display: flex;
+    color: $color-text-one;
     justify-content: center;
   }
-  h4 {
-    display: flex;
-    justify-content: center;
-    color: $color-font-three;
+  h3 {
+    margin-top: 9%;
+    color: $color-text-one;
   }
   h5 {
     margin-top: 20px;
-    color: $color-font-two;
+    color: $color-text-one;
+  }
+  h6 {
+    margin-top: 20px;
+    color: $color-text-one;
   }
   .block-menu-calendar-info {
     margin-top: 20px;
     width: 1000px;
     height: 260px;
-    outline: 6px dashed $color-font-three;
-    outline-offset: -1px;
-    border: 6px solid $color-font-three;
-    background-color: $color-block-purple;
-    border-radius: 5px;
+    border: 5px solid $color-border;
+    border-radius: 10px;
     margin-bottom: 20px;
   }
   .button {
     font-size: 25px;
     height: 50px;
+    border-radius: 10px;
     margin-top: 10px;
   }
 }

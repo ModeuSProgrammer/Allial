@@ -30,7 +30,7 @@ const AddFood = () => {
       </header>
 
       <Section className="section section-single">
-        <Box className="box box-main-two">
+        <Box className="box">
           <div className="container-one container-food">
             <form onSubmit={(e) => { e.preventDefault(); addFood(UserRoleID, food, title, weight) }}>
               <h2>Добавить Блюдо</h2>
@@ -51,7 +51,11 @@ const AddFood = () => {
       <footer>
         <div className="container container-footer">
           <div className="block-logo" >
-            <Image source="/img/logo.png" alt="Аллиал" className={"logo"} />
+            <Link to="/admin">
+              <Link to="/admin">
+                <Image source="/img/Logo3.png" alt="Аллиал" className={"logo"} />
+              </Link>
+            </Link>
           </div>
           <nav className="footer-nav">
             <ul className="navigation">

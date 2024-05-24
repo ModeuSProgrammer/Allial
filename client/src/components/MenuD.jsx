@@ -25,7 +25,7 @@ const MenuD = () => {
   return (
     <div>
       <Section className="section section-single">
-        <Box className="box box-main-two">
+        <Box className="box">
           <div className="container-one">
             <div className="container-list">
               <h2>Меню на день</h2>

@@ -11,6 +11,7 @@ form {
     margin-bottom: 20px;
     width: 480px;
     border: 4px solid $color-form;
+    border-radius: 7px;
     height: 40px;
     padding-left: 20px;
     font-size: 20px;
@@ -23,17 +24,17 @@ form {
   width: fit-content;
   height: fit-content;
   padding: 10px 70px;
-  background-color: $color-button-bg-dashed;
-  color: $color-font-two;
+  background-color: $color-form-btn;
+  color: $color-form-btn-text;
   cursor: pointer;
-  outline: 6px dashed $color-button-bg-dashed;
-  outline-offset: -4px;
   border: transparent;
 }
 
 .container-users {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-evenly;
+  color: $color-text-a;
   form {
     h2 {
       font-size: 32px;
@@ -49,31 +50,7 @@ form {
       font-size: 20px;
     }
     select {
-      border: 4px solid $color-form;
-      width: 430px;
-      height: 50px;
-      font-size: 24px;
-      margin: 10px auto;
-    }
-  }
-}
-.container-food {
-  display: flex;
-  flex-direction: column;
-  form {
-    h2 {
-      font-size: 32px;
-    }
-    margin-top: 20px;
-    input {
-      width: 400px;
-    }
-    .button {
-      width: fit-content;
-      padding: 10px 20px;
-      font-size: 24px;
-    }
-    select {
+      border-radius: 10px;
       border: 4px solid $color-form;
       width: 430px;
       height: 50px;
@@ -82,25 +59,54 @@ form {
     }
   }
 }
+.container-food {
+  display: flex;
+  color: $color-text-one;
+  flex-direction: column;
+  form {
+    h2 {
+      font-size: 32px;
+    }
+    margin-top: 20px;
+    input {
+      border-radius: 10px;
+      width: 400px;
+    }
+    .button {
+      width: fit-content;
+      padding: 10px 20px;
+      font-size: 24px;
+      border-radius: 10px;
+    }
+    select {
+      border: 4px solid $color-form;
+      width: 430px;
+      height: 50px;
+      font-size: 24px;
+      border-radius: 10px;
+      margin: 15px auto;
+    }
+  }
+}
 form {
   .button:hover {
     transition: 0.5s;
     background-color: $hover-1;
-    color: $hover-2;
+    color: $hover-3;
   }
   .button:active {
     transition: 0.5s;
-    background-color: $hover-2;
-    color: $hover-1;
+    background-color: $hover-3;
+    color: $hover-2;
   }
 }
 .button:hover {
   transition: 0.5s;
   background-color: $hover-1;
-  color: $hover-2;
+  color: $hover-3;
 }
 .button:active {
   transition: 0.5s;
-  background-color: $hover-2;
-  color: $hover-1;
+  background-color: $hover-3;
+  color: $hover-2;
 }

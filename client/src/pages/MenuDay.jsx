@@ -34,7 +34,7 @@ const MenuDay = () => {
                 <li><Link to="/" onClick={() => dispatch(logout())}>Выход</Link></li>
               </ul>
             ) : (
-              <p onClick={() => dispatch(logout())} >Перезайдите в аккаунт пожалуйста, тыкните на данный текст чтобы выйти</p>
+              <p onClick={() => dispatch(logout())} >Перезайдите в аккаунт пожалуйста, нажмите на данный текст чтобы выйти</p>
             )))}
         </nav>
       </header>
@@ -43,9 +43,11 @@ const MenuDay = () => {
 
       <footer>
         <div className="container container-footer">
-          {/* не забудь убрать выход с клика по лого */}
-          <div className="block-logo" onClick={() => dispatch(logout())}>
-            <Image source="/img/logo.png" alt="Аллиал" className={"logo"} />
+
+          <div className="block-logo">
+            <Link to="/">
+              <Image source="/img/Logo3.png" alt="Аллиал" className={"logo"} />
+            </Link>
           </div>
           <nav className="footer-nav">
             {dataUserRoleID === 3 ? (

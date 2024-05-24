@@ -29,7 +29,9 @@ const Admin = () => {
       <footer>
         <div className="container container-footer">
           <div className="block-logo" >
-            <Image source="/img/logo.png" alt="Аллиал" className={"logo"} />
+            <Link to="/admin">
+              <Image source="/img/Logo3.png" alt="Аллиал" className={"logo"} />
+            </Link>
           </div>
           <nav className="footer-nav">
             <ul className="navigation">

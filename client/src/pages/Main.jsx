@@ -4,6 +4,7 @@ import Box from "../components/box"
 
 import { Link } from "react-router-dom"
 
+
 const Main = () => {
   return (
     <div className="page">
@@ -16,7 +17,7 @@ const Main = () => {
         </nav>
       </header>
 
-      <Section className="section section-one">
+      <Section className="section">
 
         <div className="container-one">
           <div className="main-art">
@@ -27,7 +28,7 @@ const Main = () => {
 
       </Section>
 
-      <Section className="section section-two">
+      <Section className="section">
         <Box className="box">
           <div className="container-one">
             <div className="block">
@@ -48,7 +49,9 @@ const Main = () => {
       <footer>
         <div className="container container-footer">
           <div className="block-logo" >
-            <Image source="/img/Logo3.png" alt="Аллиал" className={"logo"} />
+            <Link to="/">
+              <Image source="/img/Logo3.png" alt="Аллиал" className={"logo"} />
+            </Link>
           </div>
           <nav className="footer-nav">
             <ul className="navigation">
@@ -58,7 +61,6 @@ const Main = () => {
           </nav>
         </div>
       </footer >
-
     </div >
   )
 }

@@ -27,7 +27,7 @@ const CommentChief = () => {
 
   return (
     <Section className="section section-single">
-      <Box className="box box-main">
+      <Box className="box">
         <div className="container-one">
           <div className="comment-block">
             <h2>Отзывы</h2>

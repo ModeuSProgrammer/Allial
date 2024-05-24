@@ -50,7 +50,7 @@ const Calendar = () => {
     <div>
       {flag ? (
         <div>
-          <Section className="section section-two">
+          <Section className="section">
             <Box className="box">
               <div className="calendar-numbers">
                 <h2>{Month(month)}</h2>
@@ -65,7 +65,7 @@ const Calendar = () => {
         </div >
       ) : (
         <div>
-          <Section className="section section-changer">
+          <Section className="section">
             <Box className="box">
               <div className="block-menu-calendar">
                 <h2>Меню</h2>
@@ -89,7 +89,7 @@ const Calendar = () => {
 
                   ) : (
                     <div className="list-menu-day">
-                      <h5> Меню на данный день нет</h5>
+                      <h3> Меню на данный день нет</h3>
                     </div>
                   )}
                 </div>

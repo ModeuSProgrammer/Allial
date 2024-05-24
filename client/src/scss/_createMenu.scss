@@ -1,5 +1,6 @@
 .container-create-menu {
-  margin-top: -100px;
+  margin-top: -50px;
+  color: $color-text-one;
   display: flex;
   width: 100%;
   align-items: center;
@@ -20,6 +21,7 @@
     margin-bottom: 20px;
   }
   .create-menu-selects select {
+    border-radius: 10px;
     display: flex;
     width: 550px;
     flex-direction: column;
@@ -30,8 +32,10 @@
   .crate-menu-date {
     display: flex;
     justify-content: center;
-    width: 100%;
-    margin: 10px auto;
+    input {
+      width: fit-content;
+      margin-right: 0 auto;
+    }
   }
   .create-menu-button {
     width: 100%;

@@ -24,22 +24,22 @@ const LogIn = () => {
         </nav>
       </header>
       <Section className="section section-single">
-        <Box className="box box-main-two">
-          <div className="container-one">
-            <form onSubmit={e => { e.preventDefault(); }}>
-              <h2>Авторизация</h2>
-              <input type="email" value={userEmail} onChange={(event) => SetEmail(event.target.value)} min={1} max={50} placeholder="Почта" />
-              <input type="password" value={userPass} onChange={(event) => SetPass(event.target.value)} min={1} max={50} placeholder="Пароль" />
-              <input type="submit" className="button" value="Вход" onClick={() => dispatch(login(userEmail, userPass))} />
-            </form>
-          </div>
-        </Box>
+        <div className="container-one">
+          <form onSubmit={e => { e.preventDefault(); }}>
+            <h2>Авторизация</h2>
+            <input type="email" value={userEmail} onChange={(event) => SetEmail(event.target.value)} min={1} max={50} placeholder="Почта" />
+            <input type="password" value={userPass} onChange={(event) => SetPass(event.target.value)} min={1} max={50} placeholder="Пароль" />
+            <input type="submit" className="button" value="Вход" onClick={() => dispatch(login(userEmail, userPass))} />
+          </form>
+        </div>
       </Section>
 
       <footer>
         <div className="container container-footer">
           <div className="block-logo" >
-            <Image source="/img/logo.png" alt="Аллиал" className={"logo"} />
+            <Link to="/">
+              <Image source="/img/Logo3.png" alt="Аллиал" className={"logo"} />
+            </Link>
           </div>
           <nav className="footer-nav">
             <ul className="navigation">

@@ -13,7 +13,7 @@ const CommentUser = () => {
   return (
     <div>
       <Section className="section section-single">
-        <Box className="box box-main">
+        <Box className="box">
           <div className="container-one">
             <div className="comment-block">
               <div className="comment-form">

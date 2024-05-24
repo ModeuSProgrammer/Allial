@@ -34,7 +34,7 @@ const AddUsers = () => {
       </header>
 
       <Section className="section section-single">
-        <Box className="box box-main-two">
+        <Box className="box">
           <div className="container-one container-users">
             <form onSubmit={(e) => { e.preventDefault(); RegistUser(UserRoleID, roles, email, password) }}>
               <h2>Добавить пользователя</h2>
@@ -61,7 +61,9 @@ const AddUsers = () => {
       <footer>
         <div className="container container-footer">
           <div className="block-logo" >
-            <Image source="/img/logo.png" alt="Аллиал" className={"logo"} />
+            <Link to="/admin">
+              <Image source="/img/Logo3.png" alt="Аллиал" className={"logo"} />
+            </Link>
           </div>
           <nav className="footer-nav">
             <ul className="navigation">

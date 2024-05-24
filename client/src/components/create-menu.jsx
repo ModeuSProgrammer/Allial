@@ -38,7 +38,7 @@ const CreateMenu = () => {
 
   return (
     <Section className="section section-single">
-      <Box className="box box-main-two">
+      <Box className="box">
         <div className="container-one">
           <div className="container-create-menu">
             <h2>Планирование меню на день</h2>
