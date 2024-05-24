@@ -8,12 +8,12 @@
         display: flex;
         justify-content: space-between;
         height: fit-content;
-        color: $color-a-two;
+        color: $color-text-a;
         li {
             display: flex;
             justify-content: space-between;
             a {
-                color: $color-a-two;
+                color: $color-text-a;
             }
         }
     }
@@ -40,7 +40,7 @@
             display: flex;
             justify-content: space-between;
             a {
-                color: $color-a-one;
+                color: $color-text-a;
             }
         }
     }

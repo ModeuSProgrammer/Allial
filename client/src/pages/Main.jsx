@@ -17,21 +17,20 @@ const Main = () => {
       </header>
 
       <Section className="section section-one">
-        <Box className="box box-main">
-          <div className="container-one">
-            <div className="main-art">
-              <Image source="/img/main-art.png" alt="Добро пожаловать!
+
+        <div className="container-one">
+          <div className="main-art">
+            <Image source="/img/proba-main.png" alt="Добро пожаловать!
             Ждём вас 10:00 - 18:00 Cб., Вс. - выходной" className="art" />
-            </div>
           </div>
-        </Box>
+        </div>
+
       </Section>
 
       <Section className="section section-two">
         <Box className="box">
-          <div className="container-two">
-            <Image source="/img/logo.png" alt="Аллиал" className="logo" />
-            <div className="block block-content-pink-one">
+          <div className="container-one">
+            <div className="block">
               <h4>Ваш путь к космическому успеху<br />начинается с баланса в питании!</h4>
               <hr />
               <p>Добро пожаловать в веб-приложение по организации здорового питания<br />
@@ -49,7 +48,7 @@ const Main = () => {
       <footer>
         <div className="container container-footer">
           <div className="block-logo" >
-            <Image source="/img/logo.png" alt="Аллиал" className={"logo"} />
+            <Image source="/img/Logo3.png" alt="Аллиал" className={"logo"} />
           </div>
           <nav className="footer-nav">
             <ul className="navigation">

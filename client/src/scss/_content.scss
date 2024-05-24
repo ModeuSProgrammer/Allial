@@ -5,23 +5,21 @@
   height: 520px;
   margin-bottom: 30px;
   &-one {
-    outline: 6px dashed $color-block-pink-2;
-    outline-offset: -2px;
-    background-color: $color-block-pink-2;
+    box-shadow: 0px 0px 10px 2px $color-box-shadow inset;
+    background-color: $color-section;
   }
   &-two {
     z-index: 0;
-    outline: 6px dashed $color-block-pink-1;
-    outline-offset: -2px;
-    background-color: $color-block-pink-1;
+    box-shadow: 0px 0px 10px 2px $color-box-shadow inset;
+    background-color: $color-section;
   }
   &-three {
+    box-shadow: 0px 0px 10px 2px $color-box-shadow inset;
     background-color: $color-block-purple;
   }
   &-single {
+    box-shadow: 0px 0px 10px 2px $color-box-shadow inset;
     background-color: $color-block-pink-2;
-    outline: 6px dashed $color-dashed-pink-2;
-    outline-offset: -2px;
     margin: 64px 0;
   }
 }
@@ -32,15 +30,8 @@
   height: 100%;
   display: flex;
   justify-content: center;
-  &-main {
-    outline: 6px dashed $color-dashed-pink-2;
-    outline-offset: -4px;
-    background-color: #f4f4f4;
-  }
   &-main-two {
     z-index: 2;
-    outline: 6px dashed $color-dashed-pink-2;
-    outline-offset: -4px;
     background-color: #f4f4f4;
   }
 }
@@ -51,9 +42,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $color-block-pink-2;
-  outline: 6px dashed $color-dashed-pink-2;
-  outline-offset: -2px;
 }
 .container-two {
   width: 100%;
@@ -74,25 +62,20 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   height: 100%;
-
   width: 760px;
   &-content-white {
     background-color: $color-block-white;
-    outline: 6px solid $color-block-purple;
-    outline-offset: -10px;
   }
-  &-content-pink-one {
-    outline: 6px dashed $color-block-purple;
-    background-color: $color-block-purple;
-  }
+
   &-content-pink-two {
     background-color: $color-block-purple;
   }
   h4,
   p {
-    color: $color-font;
-    margin-left: 15px;
+    text-align: center;
+    color: $color-text-one;
     margin-bottom: 10px;
   }
 }

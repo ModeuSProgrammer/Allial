@@ -11,7 +11,6 @@ const generateJWT = (ID, email, RoleID) => {
   )
 }
 
-
 class UserController {
   // add new user in system
   async Registration(req, res) {
