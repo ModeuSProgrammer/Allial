@@ -34,14 +34,14 @@ const AddFood = () => {
           <div className="container-one container-food">
             <form onSubmit={(e) => { e.preventDefault(); addFood(UserRoleID, food, title, weight) }}>
               <h2>Добавить Блюдо</h2>
-              <select value={food} onChange={e => SetFood(e.target.value)} >
+              <select value={food} onChange={e => SetFood(e.target.value)} required>
                 <option value={1}>Первое</option>
                 <option value={2}>Второе</option>
                 <option value={3}>Десерт</option>
                 <option value={4}>Напиток</option>
               </select>
-              <input type="text" min={1} max={50} onChange={(e) => SetTitle(e.target.value)} value={title} placeholder="Название"></input>
-              <input type="number" min={1} max={1000} onChange={(e) => SetWeight(e.target.value)} value={weight} placeholder="Грамм"></input>
+              <input type="text" min={1} max={50} onChange={(e) => SetTitle(e.target.value)} value={title} placeholder="Название" required></input>
+              <input type="number" min={1} max={1000} onChange={(e) => SetWeight(e.target.value)} value={weight} placeholder="Грамм" required></input>
               <input className="button" text="Сохранить" type="submit" />
             </form>
           </div>

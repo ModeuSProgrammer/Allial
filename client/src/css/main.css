@@ -30,7 +30,7 @@ footer {
   box-shadow: 3px -2px 3px rgba(36, 26, 66, 0.4509803922);
   width: 100%;
   min-height: 230px;
-  max-height: 300px;
+  max-height: 270px;
   display: flex;
   align-items: end;
 }

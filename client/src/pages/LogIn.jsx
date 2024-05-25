@@ -27,8 +27,8 @@ const LogIn = () => {
         <div className="container-one">
           <form onSubmit={e => { e.preventDefault(); }}>
             <h2>Авторизация</h2>
-            <input type="email" value={userEmail} onChange={(event) => SetEmail(event.target.value)} min={1} max={50} placeholder="Почта" />
-            <input type="password" value={userPass} onChange={(event) => SetPass(event.target.value)} min={1} max={50} placeholder="Пароль" />
+            <input type="email" value={userEmail} onChange={(event) => SetEmail(event.target.value)} min={1} max={50} placeholder="Почта" required />
+            <input type="password" value={userPass} onChange={(event) => SetPass(event.target.value)} min={1} max={50} placeholder="Пароль" required />
             <input type="submit" className="button" value="Вход" onClick={() => dispatch(login(userEmail, userPass))} />
           </form>
         </div>

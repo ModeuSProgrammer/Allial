@@ -38,7 +38,7 @@ const AddUsers = () => {
           <div className="container-one container-users">
             <form onSubmit={(e) => { e.preventDefault(); RegistUser(UserRoleID, roles, email, password) }}>
               <h2>Добавить пользователя</h2>
-              <select name="roles" value={roles} onChange={e => SetRoles(e.target.value)} >
+              <select name="roles" value={roles} onChange={e => SetRoles(e.target.value)} required>
                 <option value={1}>Пользователь</option>
                 <option value={2}>Шеф</option>
                 <option value={3}>Админ</option>
@@ -51,7 +51,7 @@ const AddUsers = () => {
 
             <form onSubmit={(e) => { e.preventDefault(); DeleteUser(emailDel) }}>
               <h2>Удалить пользователя</h2>
-              <input type="email" value={emailDel} onChange={e => SetDelete(e.target.value)} min={1} max={50} placeholder="Почта"></input>
+              <input type="email" value={emailDel} onChange={e => SetDelete(e.target.value)} min={1} max={50} placeholder="Почта" required />
               <input className="button" text="Удалить" type='submit' />
             </form>
           </div>

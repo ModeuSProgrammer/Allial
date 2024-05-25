@@ -44,7 +44,7 @@ const CreateMenu = () => {
             <h2>Планирование меню на день</h2>
             <form onSubmit={(e) => { e.preventDefault(); CreateMenus(UserRoleID, UserEmail, MenuDay, valueListOne, valueListTwo, valueListThree, valueListFour) }} >
               <div className="crate-menu-date">
-                <input type="date" value={MenuDay} onChange={(e) => SetDayMenu(e.target.value)} />
+                <input type="date" value={MenuDay} onChange={(e) => SetDayMenu(e.target.value)} required />
               </div>
               <div className="create-menu-list">
                 <div className="create-menu-title">
@@ -54,28 +54,28 @@ const CreateMenu = () => {
                   <h5>Десерт</h5>
                 </div>
                 <div className="create-menu-selects">
-                  <select value={valueListOne} onChange={handleSelectChange1}>
+                  <select value={valueListOne} onChange={handleSelectChange1} required>
                     <option> </option>
                     {possitionMenu1.map((value, index) => (
                       <option key={index}>{value}</option>
                     ))}
                   </select>
 
-                  <select value={valueListTwo} onChange={handleSelectChange2}>
+                  <select value={valueListTwo} onChange={handleSelectChange2} required>
                     <option> </option>
                     {possitionMenu2.map((value, index) => (
                       <option key={index}>{value}</option>
                     ))}
                   </select>
 
-                  <select value={valueListThree} onChange={handleSelectChange3}>
+                  <select value={valueListThree} onChange={handleSelectChange3} required>
                     <option> </option>
                     {possitionMenu3.map((value, index) => (
                       <option key={index}>{value}</option>
                     ))}
                   </select>
 
-                  <select value={valueListFour} onChange={handleSelectChange4}>
+                  <select value={valueListFour} onChange={handleSelectChange4} required>
                     <option> </option>
                     {possitionMenu4.map((value, index) => (
                       <option key={index}>{value}</option>
