@@ -85,7 +85,6 @@ class Menus {
       if (roles !== 2) {
         return res.status(400).json({ message: 'Ошибка прав доступа' })
       }
-      roles, emailChief, date, one, two, drink, dessert
       if (date.length === 0 || one.length === 0 || two.length === 0 || drink.length === 0 || dessert.length === 0) {
         return res.status(200).json({ message: 'Заполните все поля' })
       }
